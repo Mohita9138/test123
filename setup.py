@@ -7,6 +7,7 @@ def main():
     os.system("clear")
     banner.main()
     banner.attack("Setup")
+    os.system("chmod +x *")
     os.system("pip install -r requirements.txt")
     create_symlink()
 def create_symlink():
