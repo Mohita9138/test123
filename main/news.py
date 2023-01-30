@@ -2,6 +2,9 @@ from main.tools import banner
 import requests
 from bs4 import BeautifulSoup
 def get_news(url="https://thehackernews.com/"):
+    os.system("clear")
+    banner.main()
+    banner.attack("News")
     res = requests.get(url)
     soup = BeautifulSoup(res.text, "html.parser")
 
@@ -29,6 +32,9 @@ def get_news(url="https://thehackernews.com/"):
         print(f"\nTitle: {title} \ndescription: {description}  \nDate: {date} \nURL: {url}\n\n")
     input("Press ENTER to go back")
 def main():
+    os.system("clear")
+    banner.main()
+    banner.attack("News")
     ask=input("Do you want news Date wise?(y/n)")
     if ask.lower()=="y" or ask.lower()=="y":
         date_user=input("enter date:(YYYY-MM-DD)")
