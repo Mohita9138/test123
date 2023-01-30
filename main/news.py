@@ -1,6 +1,7 @@
 from main.tools import banner
 import requests
 from bs4 import BeautifulSoup
+import os
 def get_news(url="https://thehackernews.com/"):
     os.system("clear")
     banner.main()
