@@ -30,7 +30,7 @@ def get_news(url="https://thehackernews.com/"):
             dates.append(date.text.strip())
 
     for title, date, url,description in zip(titles, dates, urls,discription_post):
-        print(f"\nTitle: {title} \ndescription: {description}  \nDate: {date} \nURL: {url}\n\n")
+        print(f"\nTitle: {title} \ndescription: {description}  \nDate: {date} \nURL: {url}\n")
     input("Press ENTER to go back")
 def main():
     os.system("clear")
