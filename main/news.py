@@ -27,6 +27,7 @@ def get_news(url="https://thehackernews.com/"):
 
     for title, date, url,description in zip(titles, dates, urls,discription_post):
         print(f"\nTitle: {title} \ndescription: {description}  \nDate: {date} \nURL: {url}\n\n")
+    input("Press ENTER to go back")
 def main():
     ask=input("Do you want news Date wise?(y/n)")
     if ask.lower()=="y" or ask.lower()=="y":
@@ -34,5 +35,5 @@ def main():
         get_news(f"https://thehackernews.com/search?updated-max={date_user}T17:23:00%2B05:30&max-results=10")
     else:
         get_news()
-if __name__="__main__":
+if __name__=="__main__":
     main()
