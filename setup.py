@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os
 import subprocess
-import banner
+from main.tools import banner
 
 def main():
     os.system("clear")
