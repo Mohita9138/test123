@@ -28,6 +28,7 @@ try:
                 print(use.decode())
                 print("\u001b[32m[+] Cyberonix is UPDATED to latest version")
                 os.system("cyberonix")
+                exit()
             else:
                 print("[-] Something went wrong....")
                 print(use.decode())
