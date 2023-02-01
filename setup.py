@@ -18,7 +18,7 @@ def create_symlink():
     f = open("run.sh", "w")
     f.write("#!/bin/bash")
     f.write("\n")
-    f.write(f'python3 {there[0]}/cyber.py "$@"')
+    f.write(f'python3 {there[0]}/cyberonix.py "$@"')
     f.close()
     os.system("chmod +x *")
     os.system("sudo cp run.sh /usr/bin/cyberonix")
