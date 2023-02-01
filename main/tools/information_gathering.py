@@ -276,7 +276,7 @@ def Wafw00f():
             writeup.writeup({"First resource":"https://www.briskinfosec.com/tooloftheday/toolofthedaydetail/wafw00f-tool-to-fingerprint-and-identify-web-application-firewall","Second resource":"https://null-byte.wonderhowto.com/how-to/identify-web-application-firewalls-with-wafw00f-nmap-0198145/"},"Wafw00f")
         else:
             return
-def tool_writeups():
+def tool_options():
     print(f"{colors.options}1) TOOL(about,installation)")
     print("2) Write ups")
     print("3) go back..")
