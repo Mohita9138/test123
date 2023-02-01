@@ -117,9 +117,9 @@ def main():
     list_attacks = ["Kismet", "Wifite", "Fern Wifi Cracker",
                     "Aircrack-ng", "Fluxion", "Wifiphisher", "Bettercap", "go back"]
     for i in range(len(list_attacks)):
-            print(f"{colors.options}{i}) {list_attacks[i]}{colors.reset}")
+        print(f"{colors.options}{i}) {list_attacks[i]}{colors.reset}")
 
-        option = input(f"\n{colors.select} Select an option -> {colors.reset} ")
+    option = input(f"\n{colors.select} Select an option -> {colors.reset} ")
     if option == "0":
         print("\n[+] Kismet")
         os.system("clear")
