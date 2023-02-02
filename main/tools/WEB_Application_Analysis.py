@@ -121,14 +121,7 @@ try:
                         isExist = os.path.exists(path)
                         if isExist:
                             print("[+] It is inatalled")
-                            professional=input("[+] Do you want it's Run it?(Y/N)")
-                            if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
-                                proc = subprocess.Popen([f"burp"], stdout=subprocess.PIPE, shell=True)
-                                #there keyfor success output and noththere for error output
-                                (there, notthere) = proc.communicate()
-                                if notthere:
-                                    print(f"{colors.red}[+] invalid jarfile{colors.reset}")
-                                    os.system("cd Burp-Suite && chmod +x * && ./installed.sh")
+                            os.system("burp > /dev/null 2>&1")
                         else:
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
                             professional=input("[+] Do you want it's Run it?(Y/N)")
