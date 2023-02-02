@@ -128,7 +128,7 @@ try:
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
                             professional=input("[+] Do you want Run it?(Y/N)")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
-                                os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
+                                os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh > /dev/null 2>&1")
                     else:
                         print("[+] CHECKING OF COMMUNITY VERSION IS INSTALLED OR NOT")
                         #check for installation
