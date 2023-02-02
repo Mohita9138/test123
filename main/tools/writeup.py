@@ -1,4 +1,5 @@
-from main.tools import run_on_browser,colors,os
+from main.tools import run_on_browser,colors
+import os
 def writeup(writeup_dist,name):
     while True:
         os.system("clear")
