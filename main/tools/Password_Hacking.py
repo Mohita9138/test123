@@ -15,10 +15,9 @@ def clear():
 
 
 def check_installed(name, needargs=False):
-    proc = subprocess.Popen([f"{colors.blue}dpkg -s {name}"], stdout=subprocess.PIPE, shell=True)
+    proc = subprocess.Popen([f"dpkg -s {name}"], stdout=subprocess.PIPE, shell=True)
     # there keyfor success output and noththere for error output
     (there, notthere) = proc.communicate()
-    os.system(f"{colors.blue}dpkg -s {name}")
     if "install ok installed" not in there.decode():
         print(f"{colors.red}[-] not installed")
         print(f"{colors.red}[+] it is not installed in your Kali")
