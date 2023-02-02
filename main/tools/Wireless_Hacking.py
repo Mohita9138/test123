@@ -45,7 +45,7 @@ def check_installed(name, needargs=False):
                 if name == 'kismet':
                     print(f"[+] {name} is started at address: http://localhost:2501 (or the address of this system) for the Kismet UI")
                     KURL = "http://localhost:2501" 
-                    threading.Thread(target=run_on_browser, args=(KURL,)).start()
+                    threading.Thread(target=main.run_on_browser, args=(KURL,)).start()
                     # os.system(f"firefox http://localhost:2501 2>/dev/null")
 
 def thread_run(command, needargs=False):
@@ -58,15 +58,8 @@ def thread_run(command, needargs=False):
     elif needargs == '--help':
         os.system(f"{command} --help")
     else:
-        # for gui all errors/output will go in null
-        # time.sleep(1)
-        # subprocess.Popen(["xdotool", "key", "ctrl+shift+t"])
-        os.system(f"{command} > /dev/null 2>&1")
 
-# def run_on_browser(URL):
-#     print("[+] Opening Article")
-#     os.system(f"firefox {URL} 2>/dev/null")
-#     time.sleep(3)
+        os.system(f"{command} > /dev/null 2>&1")
 
 
 def github_getting_text(link, selector, indexvalue):
@@ -135,10 +128,8 @@ def Kismet():
         banner.description(github)
         ask = tool_options()
         if ask == "1":
-            # print("[+] Download/usage")
-            # github = github_getting_text("https://www.kali.org/tools/kismet/", 'div[id="packages-info"]', 1)
-            # print(github)
-            print(f"{colors.green}\nPreinstalled in Repository{colors.reset}")
+
+            print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
             check_installed("kismet")
             waiting.waiting()
         elif ask == "2":
@@ -159,7 +150,7 @@ def Wifite():
             print(f"{colors.blue}[+] Download/usage{colors.reset}")
             github = github_getting_text("https://www.kali.org/tools/wifite/", 'pre', 1)
             print(github)
-            print("\n Preinstalled in Repository")
+            print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
             check_installed("wifite", "-h")
         elif ask == "2":
             writeup.writeup({"Wifite walkthrough Part-1": "https://resources.infosecinstitute.com/topic/wifite-walkthrough-part-1/", "Wifite walkthrough Part-2": "https://resources.infosecinstitute.com/topic/wifite-walkthrough-part-2/",
@@ -181,7 +172,7 @@ def Fern_wifi():
             # print("[+] Download/usage")
             # github = github_getting_text("https://github.com/savio-code/fern-wifi-cracker", 'selector', index)
             # print(github)
-            print(f"{colors.green}\nPreinstalled in Repository{colors.reset}")
+            print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
             check_installed("fern-wifi-cracker")
             waiting.waiting()
         elif ask == "2":
