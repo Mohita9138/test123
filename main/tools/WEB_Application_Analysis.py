@@ -114,14 +114,24 @@ try:
             banner.description("Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initialmapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities. Burp gives you full control, letting you combine advanced manual techniques with state-of-the-art automation, to make your work faster, more effective, and more fun.")
             ask=tool_writeups()
             if ask=="1":
-                ask_install=input("[+] Do you want to install burp Suit or not?(y/n):")
-                if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                     professional=input("[+] Do you want it's professional?(Y/N)")
                     if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
                         #clone repo
-                        os.system("git clone https://github.com/hardikhacker/Burp-Suite")
-                        os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
+                        path = 'Burp-Suite'
+                        isExist = os.path.exists(path)
+                        print(isExist)
+                        if isExist:
+                            print("[+] It is inatalled")
+                            professional=input("[+] Do you want it's Run it?(Y/N)")
+                            if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
+                                os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
+                        else:
+                            professional=input("[+] Do you want it's Run it?(Y/N)")
+                            os.system("git clone https://github.com/hardikhacker/Burp-Suite")
+                            if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
+                                os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
                     else:
+                        print("[+] CHECKING OF COMMUNITY VERSION IS INSTALLED OR NOT")
                         #check for installation
                         check_installed("burpsuite")
                         waiting.waiting()
