@@ -128,7 +128,7 @@ try:
                                 (there, notthere) = proc.communicate()
                                 if "corrupt jarfile" in there.decode():
                                     print("[+] invalid jarfile")
-                                    os.system("cd Burp-Suite && installed.sh")
+                                    os.system("cd Burp-Suite && ./installed.sh")
 
                         else:
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
