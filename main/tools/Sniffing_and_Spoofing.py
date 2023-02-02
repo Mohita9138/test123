@@ -25,7 +25,7 @@ def check_installed(name,needargs=False):
                         download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
-                            print("\n")
+                            
                             os.system(name)
     else:
                 print(f"{colors.green}[+] Installed")
@@ -39,7 +39,7 @@ def check_installed(name,needargs=False):
                         download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
-                            print("\n")
+                            
                             os.system(name)
 def thread_run(command,needargs=False):
     if needargs=="no-help":
@@ -171,7 +171,7 @@ def Tcpdump():
         github_text_1=github_getting_text("https://opensource.com/article/18/10/introduction-tcpdump",'p',6)
         merged_text = github_text_0 + github_text_1
         banner.description(merged_text)
-        print("\n")
+        
         ask=tool_writeups()
         if ask=="1":
             ask_install=input(f"{colors.blue}[+] Do you want to install Tcpdump or not?(y/n):{colors.reset}")
@@ -190,7 +190,7 @@ def Arpspoof():
         banner.main()
         banner.attack("Arpspoof")
         banner.description("\narpspoof is a utility for network auditing and penetration testing. It is part of the dsniff suite of tools, which is used to perform various types of network attacks and security auditing. It can be used to intercept and modify traffic on a local area network. It works by sending out specially crafted ARP (Address Resolution Protocol) packets, which can be used to redirect traffic from one host to another. This is known as ARP spoofing or ARP cache poisoning.")
-        print("\n")
+        
         ask=tool_writeups()
         if ask=="1":
             ask_install=input(f"{colors.blue}[+] Do you want to install Arpspoof or not?(y/n):{colors.reset}")
@@ -207,7 +207,7 @@ def Arpspoof():
                         download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of cli no need of thread
-                            print("\n")
+                            
                             os.system("arpspoof")
                             waiting.waiting()
                         else:
@@ -218,7 +218,7 @@ def Arpspoof():
                     download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset} ")
                     if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                         #when tool is of cli no need of thread
-                        print("\n")
+                        
                         os.system("arpspoof")
                         waiting.waiting()
                     else:
@@ -262,7 +262,7 @@ def Scapy():
                 if not os.path.isdir("scapy"):
                     print(f"{colors.blue}Downloading ...  Please Wait !!{colors.reset}")
                     os.system("git clone https://github.com/secdev/scapy.git")
-                    print("\n")
+                    
                     os.system("cd scapy && chmod u+x * && ./run_scapy")
                     waiting.waiting()
                 else:
@@ -270,7 +270,7 @@ def Scapy():
                     print(f"[+] it is Already Installed{colors.reset}")
                     download = input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset} ")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
-                        print("\n")
+                        
                         os.system("cd scapy && chmod u+x * && ./run_scapy")
                         waiting.waiting()
                     else:

@@ -127,12 +127,8 @@ try:
                                 #there keyfor success output and noththere for error output
                                 (there, notthere) = proc.communicate()
                                 if "corrupt jarfile" in there.decode():
-                                    print("[+] invalid jarfile")
-                                    proc = subprocess.Popen([f"cd Burp-Suite && ./installed.sh"], stdout=subprocess.PIPE, shell=True)
-                                    #there keyfor success output and noththere for error output
-                                    (there, notthere) = proc.communicate()
-                                    
-
+                                    print(f"{colors.red}[+] invalid jarfile{colors.reset}")
+                                    os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
                         else:
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
                             professional=input("[+] Do you want it's Run it?(Y/N)")
@@ -174,7 +170,7 @@ try:
             banner.attack("Nikto")
             github=github_getting_text("https://github.com/sullo/nikto/wiki/Overview-&-Description",'div[class="markdown-body"]',0)
             banner.description(github)
-            print("\n")
+            
             ask=tool_writeups()
             if ask=="1":
                 print("[+] Download/usage")
@@ -194,7 +190,7 @@ try:
             banner.attack("Wapiti")
             github=github_getting_text("https://github.com/wapiti-scanner/wapiti",'p[dir="auto"]',6)
             banner.description(github)
-            print("\n")
+            
             ask=tool_writeups()
             if ask=="1":
                 print("\n Preinstalled in Repository")
