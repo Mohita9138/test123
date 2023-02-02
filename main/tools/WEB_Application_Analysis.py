@@ -121,10 +121,12 @@ try:
                         isExist = os.path.exists(path)
                         if isExist:
                             print("[+] It is inatalled")
-                            os.system("burp > /dev/null 2>&1")
+                            professional=input("[+] Do you want Run it?(Y/N)")
+                            if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
+                                os.system("burp > /dev/null 2>&1")
                         else:
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
-                            professional=input("[+] Do you want it's Run it?(Y/N)")
+                            professional=input("[+] Do you want Run it?(Y/N)")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
                                 os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
                     else:
