@@ -156,13 +156,10 @@ def Dracnmap():
                     os.system("git clone https://github.com/Screetsec/Dracnmap.git")
                     print(f"Dracnmap is installed at ' {os.getcwd()} ' path\n{colors.reset}")
                     use = input(f"{colors.blue}[+] Do you want to start Dracnmap? (y/n):{colors.reset}")
-<<<<<<< HEAD
                     if use.lower() == "y":
                         os.system("cd Dracnmap && chmod +x dracnmap-v2.2.sh && sudo ./dracnmap-v2.2.sh.sh")
-=======
                     if use[0].lower() == "y":
                         os.system("cd Dracnmap && chmod +x dracnmap-v2.2.sh && sudo ./dracnmap-v2.2.sh")
->>>>>>> origin
             else:
                 print(f"{colors.green}[+] Dracnmap is already Installed !!")
                 use = input(f"{colors.blue}[+] Do you want to start Dracnmap? (y/n):{colors.reset}")
