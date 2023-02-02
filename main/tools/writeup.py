@@ -1,4 +1,4 @@
-from main.tools import run_on_browser,colors
+from main.tools import run_on_browser,colors,banner
 import os
 def writeup(writeup_dist,name):
     while True:
