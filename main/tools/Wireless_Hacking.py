@@ -49,7 +49,7 @@ def check_installed(name, needargs=False):
                     # os.system(f"firefox http://localhost:2501 2>/dev/null")
 
 def thread_run(command, needargs=False):
-    print("\n")
+    
     if needargs == "no-help":
         # it will run only help because it is in cli
         os.system(f"{command}")
@@ -166,7 +166,7 @@ def Fern_wifi():
         github = github_getting_text(
             "https://github.com/savio-code/fern-wifi-cracker", 'p[dir="auto"]', 0)
         banner.description(github)
-        print("\n")
+        
         ask = tool_options()
         if ask == "1":
             # print("[+] Download/usage")
@@ -189,7 +189,7 @@ def Aircrack():
         github = github_getting_text("https://github.com/aircrack-ng/aircrack-ng", 'p[dir="auto"]', 1)
         github += github_getting_text("https://github.com/aircrack-ng/aircrack-ng", 'ul[dir="auto"]', 0)
         banner.description(github)
-        print("\n")
+        
         ask = tool_options()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage{colors.reset}")
@@ -250,10 +250,8 @@ def Wifiphisher():
         github = github_getting_text(
             "https://github.com/wifiphisher/wifiphisher", 'p[dir="auto"]', 2)
         banner.description(github)
-        print("\n")
         ask = tool_options()
         if ask == "1":
-            print("\n")
             print("[+] Download/usage")
             github = github_getting_text("https://github.com/wifiphisher/wifiphisher", 'p[dir="auto"]', 25)
             print(github)
@@ -279,7 +277,6 @@ def Bettercap():
         banner.description(github)
         ask = tool_options()
         if ask == "1":
-            print("\n")
             print(f"{colors.blue}[+] Download/usage{colors.reset}")
             github = github_getting_text("https://www.kali.org/tools/bettercap/", 'pre', 1)
             print(github)
