@@ -214,7 +214,7 @@ def Arpspoof():
                             pass
                 else:
                     print(f"{colors.green}[+] Installed")
-                    print(f"[+] it is installed in your kali"{colors.reset})
+                    print(f"[+] it is installed in your kali{colors.reset}")
                     download=input(f"{color.green}Do you want to run the tool?(y/n){colors.reset} ")
                     if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                         #when tool is of cli no need of thread
