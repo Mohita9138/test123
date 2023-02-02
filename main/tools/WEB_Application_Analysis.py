@@ -121,23 +121,14 @@ try:
                         isExist = os.path.exists(path)
                         if isExist:
                             print("[+] It is inatalled")
-                            professional=input("[+] Do you want it's Run it?(Y/N)")
+                            professional=input("[+] Do you want Run it?(Y/N)")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
-                                os.system("cd Burp-Suite")
-                                os.system("echo 'Starting Keygenerator'")
-                                os.system("(java -jar keygen.jar) &")
-                                time.sleep(3)
-                                os.system("echo 'Executing Burp Suite Professional with Keyloader'")
-                                os.system('echo "java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:$(pwd)/loader.jar -noverify -jar $(pwd)/Burp_Suite_Pro.jar &" > burp')
-                                os.system("chmod +x burp")
-                                os.system("cp burp /bin/burp ")
-                                os.system("(./burp)")
-
+                                os.system("burp > /dev/null 2>&1")
                         else:
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
-                            professional=input("[+] Do you want it's Run it?(Y/N)")
+                            professional=input("[+] Do you want Run it?(Y/N)")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
-                                os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
+                                os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh > /dev/null 2>&1")
                     else:
                         print("[+] CHECKING OF COMMUNITY VERSION IS INSTALLED OR NOT")
                         #check for installation
@@ -174,7 +165,7 @@ try:
             banner.attack("Nikto")
             github=github_getting_text("https://github.com/sullo/nikto/wiki/Overview-&-Description",'div[class="markdown-body"]',0)
             banner.description(github)
-            print("\n")
+            
             ask=tool_writeups()
             if ask=="1":
                 print("[+] Download/usage")
@@ -194,7 +185,7 @@ try:
             banner.attack("Wapiti")
             github=github_getting_text("https://github.com/wapiti-scanner/wapiti",'p[dir="auto"]',6)
             banner.description(github)
-            print("\n")
+            
             ask=tool_writeups()
             if ask=="1":
                 print("\n Preinstalled in Repository")
