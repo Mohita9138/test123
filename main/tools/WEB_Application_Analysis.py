@@ -126,7 +126,7 @@ try:
                                 proc = subprocess.Popen([f"burp"], stdout=subprocess.PIPE, shell=True)
                                 #there keyfor success output and noththere for error output
                                 (there, notthere) = proc.communicate()
-                                if "corrupt jarfile" in there.decode():
+                                if notthere:
                                     print(f"{colors.red}[+] invalid jarfile{colors.reset}")
                                     os.system("cd Burp-Suite && chmod +x * && ./installed.sh")
                         else:
