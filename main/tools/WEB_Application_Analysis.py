@@ -128,7 +128,7 @@ try:
                                 (there, notthere) = proc.communicate()
                                 if "corrupt jarfile" in there.decode():
                                     print("[+] invalid jarfile")
-                                    proc = subprocess.Popen([f"cd Burp-Suite && ./installed.sh}"], stdout=subprocess.PIPE, shell=True)
+                                    proc = subprocess.Popen([f"cd Burp-Suite && ./installed.sh"], stdout=subprocess.PIPE, shell=True)
                                     #there keyfor success output and noththere for error output
                                     (there, notthere) = proc.communicate()
                                     
