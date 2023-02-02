@@ -123,6 +123,7 @@ try:
                             print("[+] It is inatalled")
                             professional=input("[+] Do you want it's Run it?(Y/N)")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
+                                os.system("cd Burp-Suite")
                                 os.system("echo 'Starting Keygenerator'")
                                 os.system("(java -jar keygen.jar) &")
                                 time.sleep(3)
