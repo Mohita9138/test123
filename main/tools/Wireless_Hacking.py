@@ -16,16 +16,16 @@ def check_installed(name, needargs=False):
     if "install ok installed" not in there.decode():
         print(f"{colors.red}[-] not installed")
         print(f"[+] it is not installed in your Kali{colors.reset}")
-        download = input(f"{colors.blue}[+] Do you want to install it?(y/n){colors.reset}")
+        download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
         if download[0].lower() == "y":
             os.system(f"apt install {name} -y")
             if needargs:
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
+                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                 if download[0].lower() == "y":
                     # when tool is of cli no need of thread
                     thread_run(name, needargs)
             else:
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
+                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                 if download[0].lower() == "y":
                     # when tool is of gui it needs thread
                     threading.Thread(target=thread_run, args=(name,)).start()
@@ -33,12 +33,12 @@ def check_installed(name, needargs=False):
         print(f"{colors.green}[+] Installed")
         print(f"[+] It is installed in your kali{colors.reset}")
         if needargs:
-            download = input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
+            download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
             if download[0].lower() == "y":
                 # when tool is of cli no need of thread
                 thread_run(name, needargs)
         else:
-            download = input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
+            download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
             if download[0].lower() == "y":
                 # when tool is of gui it needs thread
                 threading.Thread(target=thread_run, args=(name,)).start()
@@ -217,20 +217,20 @@ def Fluxion():
             print(f"{colors.blue}Checking Fluxion is installed or not......{colors.reset}")
             if not os.path.isdir("fluxion"):
                 print(f"{colors.red}[-] Fluxion is not installed{colors.reset}")
-                download = input(f"{colors.blue}[+] Do you want to install it?(y/n){colors.reset}")
+                download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
                 if download[0].lower() == "y":
                     print(f"{colors.blue}[+] Installing ......{colors.reset}")
                     os.system(
                         "git clone https://www.github.com/FluxionNetwork/fluxion.git")
                     print(
                         f"{colors.blue}\nFluxion is installed at ' {os.getcwd()} ' path\n{colors.reset}")
-                    use = input(f"{colors.blue}[+] Do you want to start Fluxion? (y/n){colors.reset}")
+                    use = input(f"{colors.blue}[+] Do you want to start Fluxion? (y/n):{colors.reset}")
                     if use[0].lower() == "y":
                         os.system(
                             "cd fluxion && chmod +x fluxion.sh && ./fluxion.sh")
             else:
                 print(f"{colors.blue}[+] Fluxion is already Installed !!{colors.reset}")
-                use = input(f"{colors.blue}[+] Do you want to start Fluxion? (y/n){colors.reset}")
+                use = input(f"{colors.blue}[+] Do you want to start Fluxion? (y/n):{colors.reset}")
                 if use[0].lower() == "y":
                     os.system(
                         "cd fluxion && chmod +x fluxion.sh && ./fluxion.sh")

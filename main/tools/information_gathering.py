@@ -15,16 +15,16 @@ def check_installed(name,needargs=False):
     if "install ok installed" not in there.decode():
                 print(f"{colors.red}[-] not installed")
                 print(f"[+] it is not installed in your Kali{colors.reset}")
-                download=input(f"{colors.blue}[+] Do you want to install it?(y/n){colors.reset}")
+                download=input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
                 if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                     os.system(f"apt install {name} -y")
                     if needargs:
-                        download=input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
+                        download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of cli no need of thread
                             thread_run(name,needargs)
                     else:
-                        download=input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
+                        download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
                             threading.Thread(target=thread_run, args=(name,)).start()
@@ -32,12 +32,12 @@ def check_installed(name,needargs=False):
                 print(f"{colors.green}[+] Installed")
                 print(f"[+] it is installed in your kali{colors.reset}")
                 if needargs:
-                        download=input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
+                        download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of cli no need of thread
                             thread_run(name,needargs)
                 else:
-                        download=input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
+                        download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
                             threading.Thread(target=thread_run, args=(name,)).start()
@@ -150,17 +150,17 @@ def Dracnmap():
             print(f"{colors.blue}Checking Dracnmap is installed or not......{colors.reset}")
             if not os.path.isdir("Dracnmap"):
                 print(f"{colors.red}[-] Dracnmap is not installed{colors.reset}")
-                check_y = input(f"[{colors.blue}+] Do you want to install it?(y/n){colors.reset}")
+                check_y = input(f"[{colors.blue}+] Do you want to install it?(y/n):{colors.reset}")
                 if check_y == "y" or check_y== "Y" or check_y == "yes" or check_y=="YES":
                     print(f"{colors.green}[+] Installing .......")
                     os.system("git clone https://github.com/Screetsec/Dracnmap.git")
                     print(f"Dracnmap is installed at ' {os.getcwd()} ' path\n{colors.reset}")
-                    use = input(f"{colors.blue}[+] Do you want to start Dracnmap? (y/n){colors.reset}")
+                    use = input(f"{colors.blue}[+] Do you want to start Dracnmap? (y/n):{colors.reset}")
                     if use[0].lower() == "y":
                         os.system("cd Dracnmap && chmod +x dracnmap-v2.2.sh && sudo ./dracnmap-v2.2.sh.sh")
             else:
                 print(f"{colors.green}[+] Dracnmap is already Installed !!")
-                use = input(f"{colors.blue}[+] Do you want to start Dracnmap? (y/n){colors.reset}")
+                use = input(f"{colors.blue}[+] Do you want to start Dracnmap? (y/n):{colors.reset}")
                 if use[0].lower() == "y":
                     	os.system("cd Dracnmap && chmod +x dracnmap-v2.2.sh && ./dracnmap-v2.2.sh.sh")
         elif ask == "2":
@@ -179,17 +179,17 @@ def RED_HAWK():
             print(f"{colors.blue}Checking RED_HAWK is installed or not......{colors.reset}")
             if not os.path.isdir("RED_HAWK"):
                 print(f"{colors.red}[-] RED_HAWK is not installed{colors.reset}")
-                check_y = input(f"{colors.blue}[+] Do you want to install it?(y/n){colors.reset}")
+                check_y = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
                 if check_y.lower() == "y" or check_y.lower()=="YES":
                     print(f"{colors.green}[+] Installing .......{colors.reset}")
                     os.system("git clone https://github.com/Tuhinshubhra/RED_HAWK.git")
                     print(f"{colors.green}\RED_HAWK is installed at ' {os.getcwd()} ' path\n{colors.reset}")
-                    ask_s = input(f"{colors.blue}[+] Do you want to start RED_HAWK? (y/n){colors.reset}")
+                    ask_s = input(f"{colors.blue}[+] Do you want to start RED_HAWK? (y/n):{colors.reset}")
                     if ask_s == "y" or ask_s == "Y" or ask_s == "yes" or ask_s == "YES":
                         os.system("cd RED_HAWK && php rhawk.php")
             else:
                 print(f"{colors.green}[+] RED_HAWK is already Installed !!{colors.reset}")
-                ask_s= input(f"{colors.blue}[+] Do you want to start RED_HAWK? (y/n){colors.reset}")
+                ask_s= input(f"{colors.blue}[+] Do you want to start RED_HAWK? (y/n):{colors.reset}")
                 if ask_s == "y" or ask_s == "Y" or ask_s == "yes" or ask_s == "YES":
                     os.system("cd RED_HAWK && php rhawk.php")
 
@@ -209,17 +209,17 @@ def Th3inspector():
             print(f"{colors.blue}Checking Th3inspector is installed or not......{colors.reset}")
             if not os.path.isdir("Th3inspector"):
                 print(f"{colors.red}[-] Th3inspector is not installed{colors.reset}")
-                check_y = input(f"{colors.blue}[+] Do you want to install it?(y/n){colors.reset}")
+                check_y = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
                 if check_y.lower() == "y" or check_y.lower()=="YES":
                     print(f"{colors.green}[+] Installing .......{colors.reset}")
                     os.system("git clone https://github.com/Moham3dRiahi/Th3inspector.git")
                     print(f"{colors.green}\Th3inspector is installed at ' {os.getcwd()} ' path\n{colors.reset}")
-                    ask_s = input(f"{colors.blue}[+] Do you want to start Th3inspector? (y/n){colors.reset}")
+                    ask_s = input(f"{colors.blue}[+] Do you want to start Th3inspector? (y/n):{colors.reset}")
                     if ask_s == "y" or ask_s == "Y" or ask_s == "yes" or ask_s == "YES":
                         os.system("cd Th3inspector && perl Th3inspector.pl")
             else:
                 print(f"{colors.green}[+] Th3inspector is already Installed !!{colors.reset}")
-                ask_s= input(f"{colors.blue}[+] Do you want to start Th3inspector? (y/n){colors.reset}")
+                ask_s= input(f"{colors.blue}[+] Do you want to start Th3inspector? (y/n):{colors.reset}")
                 if ask_s == "y" or ask_s == "Y" or ask_s == "yes" or ask_s == "YES":
                     os.system("cd Th3inspector && perl Th3inspector.pl")
 

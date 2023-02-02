@@ -13,16 +13,16 @@ try:
         if "install ok installed" not in there.decode():
                     print("[-] not installed")
                     print("[+] it is not installed in your Kali")
-                    download=input("[+] Do you want to install it?(y/n)")
+                    download=input("[+] Do you want to install it?(y/n):")
                     if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                         os.system(f"apt install {name} -y")
                         if needargs:
-                            download=input("Do you want to run the tool?(y/n)")
+                            download=input("Do you want to run the tool?(y/n):")
                             if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                                 #when tool is of cli no need of thread
                                 thread_run(name,needargs)
                         else:
-                            download=input("Do you want to run the tool?(y/n)")
+                            download=input("Do you want to run the tool?(y/n):")
                             if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                                 #when tool is of gui it needs thread
                                 threading.Thread(target=thread_run, args=(name,)).start()
@@ -30,12 +30,12 @@ try:
                     print("[+] Installed")
                     print("[+] it is installed in your kali")
                     if needargs:
-                            download=input("Do you want to run the tool?(y/n)")
+                            download=input("Do you want to run the tool?(y/n):")
                             if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                                 #when tool is of cli no need of thread
                                 thread_run(name,needargs)
                     else:
-                            download=input("Do you want to run the tool?(y/n)")
+                            download=input("Do you want to run the tool?(y/n):")
                             if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                                 #when tool is of gui it needs thread
                                 threading.Thread(target=thread_run, args=(name,)).start()
@@ -114,7 +114,7 @@ try:
             banner.description("Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initialmapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities. Burp gives you full control, letting you combine advanced manual techniques with state-of-the-art automation, to make your work faster, more effective, and more fun.")
             ask=tool_writeups()
             if ask=="1":
-                ask_install=input("[+] Do you want to install burp Suit or not?(y/n)")
+                ask_install=input("[+] Do you want to install burp Suit or not?(y/n):")
                 if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                     professional=input("[+] Do you want it's professional?(Y/N)")
                     if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
@@ -202,26 +202,26 @@ try:
                 if "install ok installed" not in there.decode():
                             print("[-] not installed")
                             print("[+] it is not installed in your Kali")
-                            download=input("[+] Do you want to install it?(y/n)")
+                            download=input("[+] Do you want to install it?(y/n):")
                             if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                                 os.system("curl --request GET --url 'https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.4.2-debian9_amd64.deb' --output 'Nessus-10.4.2-debian9_amd64.deb'")
                                 os.system(f"dpkg -i Nessus-10.4.2-debian9_amd64.deb")
-                                use=input("[+] Do you want to start it's services?(y/n)")
+                                use=input("[+] Do you want to start it's services?(y/n):")
                                 if use=="y" or use=="Y" or use=="Yes" or use=="yes":
                                     os.system("systemctl start nessusd.service")
                                     print("[+] Service started....")
                                     print("[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO")
-                                    use=input("[+] Do you want to configure Nessus?(y/n)")
+                                    use=input("[+] Do you want to configure Nessus?(y/n):")
                                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
                                         threading.Thread(target=run_on_browser.main, args=("https://kali:8834/",)).start()
                 else:
                     print("[+] It is installed in you pc......")
-                    use=input("[+] Do you want to start it's services?(y/n)")
+                    use=input("[+] Do you want to start it's services?(y/n):")
                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
                                     os.system("systemctl start nessusd.service")
                                     print("[+] Service started....")
                                     print("[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO")
-                                    use=input("[+] Do you want to configure Nessus?(y/n)")
+                                    use=input("[+] Do you want to configure Nessus?(y/n):")
                                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
                                         threading.Thread(target=run_on_browser.main, args=("https://kali:8834/",)).start()
                 waiting.waiting()
