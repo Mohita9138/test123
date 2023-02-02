@@ -72,5 +72,3 @@ try:
         main()
 except KeyboardInterrupt:
     exit_program()
-except Exception as err:
-    print("[-] Getting Error\n",err)
