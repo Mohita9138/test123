@@ -60,7 +60,7 @@ try:
             #check index value from test file
             return paras[indexvalue].text
         except:
-            return {colors.red}"Not loaded because no internet connection{colors.reset}"
+            return "{colors.red}Not loaded because no internet connection{colors.reset}"
 
     def main():
         while True:
