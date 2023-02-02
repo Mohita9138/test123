@@ -271,7 +271,7 @@ def Netdiscover():
         if ask=="1":
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
-                check_installed("netdiscover","no-help")
+                check_installed("netdiscover","-h")
                 waiting.waiting()
         elif ask=="2": 
             writeup.writeup({"First resource":"https://subscription.packtpub.com/book/networking-and-servers/9781789341768/5/ch05lvl1sec50/scanning-with-netdiscover"},"Netdiscover")
