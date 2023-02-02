@@ -123,15 +123,7 @@ try:
                             print("[+] It is inatalled")
                             professional=input("[+] Do you want it's Run it?(Y/N)")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
-                                os.system("cd Burp-Suite")
-                                os.system("echo 'Starting Keygenerator'")
-                                os.system("(java -jar keygen.jar) &")
-                                time.sleep(3)
-                                os.system("echo 'Executing Burp Suite Professional with Keyloader'")
-                                os.system('echo "java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:$(pwd)/loader.jar -noverify -jar $(pwd)/Burp_Suite_Pro.jar &" > burp')
-                                os.system("chmod +x burp")
-                                os.system("cp burp /bin/burp ")
-                                os.system("(./burp)")
+                                os.system('cd Burp-Suite && (java -jar keygen.jar) & sleep 3s && echo "Executing Burp Suite Professional with Keyloader" && echo "java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:$(pwd)/loader.jar -noverify -jar $(pwd)/Burp_Suite_Pro.jar &" > burp && chmod +x burp && cp burp /bin/burp && (./burp)')
 
                         else:
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
