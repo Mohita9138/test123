@@ -35,7 +35,7 @@ try:
                                 #when tool is of cli no need of thread
                                 thread_run(name,needargs)
                     else:
-                            download=input(f"{colors.blue}Do you want to run the tool?(y/n):"{colors.reset})
+                            download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                             if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                                 #when tool is of gui it needs thread
                                 threading.Thread(target=thread_run, args=(name,)).start()
