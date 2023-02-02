@@ -128,7 +128,7 @@ try:
                                 (there, notthere) = proc.communicate()
                                 if "corrupt jarfile" in there.decode():
                                     print(f"{colors.red}[+] invalid jarfile{colors.reset}")
-                                    os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
+                                    os.system("cd Burp-Suite && chmod +x * && ./installed.sh")
                         else:
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
                             professional=input("[+] Do you want it's Run it?(Y/N)")
