@@ -47,7 +47,7 @@ try:
         (there, notthere) = proc.communicate()
         there=there.decode()
         if "root" not in there:
-            os.system("sudo python main.py")
+            os.system("sudo cyberonix")
             exit()
         while True:
             os.system("clear")
