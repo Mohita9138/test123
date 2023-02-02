@@ -54,7 +54,10 @@ def thread_run(command, needargs=False):
         # for gui all errors/output will go in null
         # time.sleep(1)
         # subprocess.Popen(["xdotool", "key", "ctrl+shift+t"])
-        os.system(f"{command} > /dev/null 2>&1")
+        if command=="maltego":
+            os.system("maltego --jdkhome /usr/lib/jvm/java-17-openjdk-amd64/ > /dev/null 2>&1")
+        else:
+            os.system(f"{command} > /dev/null 2>&1")
 def main():
     while True:
         os.system("clear")
