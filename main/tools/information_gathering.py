@@ -13,36 +13,36 @@ def check_installed(name,needargs=False):
     #there keyfor success output and noththere for error output
     (there, notthere) = proc.communicate()
     if "install ok installed" not in there.decode():
-                print("[-] not installed")
-                print("[+] it is not installed in your Kali")
-                download=input("[+] Do you want to install it?(y/n)")
+                print(f"{colors.red}[-] not installed")
+                print(f"[+] it is not installed in your Kali{colors.reset}")
+                download=input(f"{colors.blue}[+] Do you want to install it?(y/n){colors.reset}")
                 if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                     os.system(f"apt install {name} -y")
                     if needargs:
-                        download=input("Do you want to run the tool?(y/n)")
+                        download=input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of cli no need of thread
                             thread_run(name,needargs)
                     else:
-                        download=input("Do you want to run the tool?(y/n)")
+                        download=input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
                             threading.Thread(target=thread_run, args=(name,)).start()
     else:
-                print("[+] Installed")
-                print("[+] it is installed in your kali")
+                print(f"{color.green}[+] Installed")
+                print(f"[+] it is installed in your kali{color.reset}")
                 if needargs:
-                        download=input("Do you want to run the tool?(y/n)")
+                        download=input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of cli no need of thread
                             thread_run(name,needargs)
                 else:
-                        download=input("Do you want to run the tool?(y/n)")
+                        download=input(f"{colors.blue}Do you want to run the tool?(y/n){colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
                             threading.Thread(target=thread_run, args=(name,)).start()
 def thread_run(command, needargs=False):
-    print("\n")
+    print(f"\n")
     if needargs == "False":
         # it will run only help because it is in cli
         os.system(f"{command}")
@@ -66,39 +66,39 @@ def main():
 
         option = input(f"\n{colors.select} Select an option -> {colors.reset} ")
         if option=="0":
-            print("\n[+] Nmap")
+            print(f"\n[+] Nmap")
             os.system("clear")
             Nmap()
         elif option=="1":
-            print("\n[+] Maltego") 
+            print(f"\n[+] Maltego") 
             os.system("clear")
             Maltego()
         elif option=="2":
-            print("\n[+] Dracnmap")
+            print(f"\n[+] Dracnmap")
             os.system("clear")
             Dracnmap()
         elif option=="3":
-            print("\n[+] RED_HAWK")
+            print(f"\n[+] RED_HAWK")
             os.system("clear")
             RED_HAWK()
         elif option=="4":
-            print("\n[+] Th3inspector")
+            print(f"\n[+] Th3inspector")
             os.system("clear")
             Th3inspector()
         elif option=="5":
-            print("\n[+] Hping3")
+            print(f"\n[+] Hping3")
             os.system("clear")
             Hping3()
         elif option=="6":
-            print("\n[+] Arping")
+            print(f"\n[+] Arping")
             os.system("clear")
             Arping()
         elif option=="7":
-            print("\n[+] Netdiscover")
+            print(f"\n[+] Netdiscover")
             os.system("clear")
             Netdiscover()
         elif option=="8":
-            print("\n[+] Wafw00f")
+            print(f"\n[+] Wafw00f")
             os.system("clear")
             Wafw00f()
         else:
@@ -111,6 +111,8 @@ def Nmap():
         banner.description("Nmap (Network Mapper) is a network scanner created by Gordon Lyon (also known by his pseudonym Fyodor Vaskovich). Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the responses.")
         ask=tool_options()
         if ask=="1":
+            print(f"{colors.blue}[+] Download/usage")
+            print(f"\nPreinstalled in Repository{colors.reset}")
             check_installed("nmap","-h")
             waiting.waiting()
         elif ask=="2":
@@ -127,6 +129,8 @@ def Maltego():
         banner.description("Maltego is software used for open-source intelligence and forensics, developed by Paterva from Pretoria, South Africa. Maltego focuses on providing a library of transforms for discovery of data from open sources, and visualizing that information in a graph format, suitable for link analysis and data mining")
         ask=tool_options()
         if ask=="1":
+            print(f"{colors.blue}[+] Download/usage")
+            print(f"\nPreinstalled in Repository{colors.reset}")
             check_installed("maltego")
             waiting.waiting()
         elif ask=="2":
@@ -142,20 +146,21 @@ def Dracnmap():
         banner.description("Dracnmap is an open source program which is using to exploit the network and gathering information with nmap help. Nmap command comes with lots of options that can make the utility more robust and difficult to follow for new users. Hence Dracnmap is designed to perform fast scaning with the utilizing script engine of nmap and nmap can perform various automatic scanning techniques with the advanced commands.")
         ask = tool_options()
         if ask == "1":
-            print("Checking Dracnmap is installed or not......")
+            print(f"{colors.blue}[+] Download/usage")
+            print(f"{color.blue}Checking Dracnmap is installed or not......{color.reset}")
             if not os.path.isdir("Dracnmap"):
-                print("[-] Dracnmap is not installed")
-                check_y = input("[+] Do you want to install it?(y/n)")
+                print(f"{color.red}[-] Dracnmap is not installed{color.reset}")
+                check_y = input(f"[{color.blue}+] Do you want to install it?(y/n){color.reset}")
                 if check_y == "y" or check_y== "Y" or check_y == "yes" or check_y=="YES":
-                    print("[+] Installing .......")
+                    print(f"{color.green}[+] Installing .......")
                     os.system("git clone https://github.com/Screetsec/Dracnmap.git")
-                    print(f"\Dracnmap is installed at ' {os.getcwd()} ' path\n")
-                    use = input("[+] Do you want to start Dracnmap? (y/n)")
+                    print(f"Dracnmap is installed at ' {os.getcwd()} ' path\n{color.reset}")
+                    use = input(f"{color.blue}[+] Do you want to start Dracnmap? (y/n){color.reset}")
                     if use[0].lower() == "y":
                         os.system("cd Dracnmap && chmod +x dracnmap-v2.2.sh && sudo ./dracnmap-v2.2.sh.sh")
             else:
-                print("[+] Dracnmap is already Installed !!")
-                use = input("[+] Do you want to start Dracnmap? (y/n)")
+                print(f"{color.green}[+] Dracnmap is already Installed !!")
+                use = input(f"{color.blue}[+] Do you want to start Dracnmap? (y/n){color.reset}")
                 if use[0].lower() == "y":
                     	os.system("cd Dracnmap && chmod +x dracnmap-v2.2.sh && ./dracnmap-v2.2.sh.sh")
         elif ask == "2":
@@ -170,20 +175,21 @@ def RED_HAWK():
         banner.description("Red Hawk is a free and open-source tool available on GitHub. Red Hawk is used to scanning websites for information gathering and finding vulnerabilities. Red Hawk is written in PHP. It uses PHP script to do reconnaissance. Red Hawk is so powerful that it can detect content management system while scanning, it can detect IP address, it can detect webserver record, it can detect Cloudflare information, and can detect robots.txt. Red Hawk can detect WordPress, Drupal, Joomla, and Magento CMS. Red Hawk looks for error-based SQL injections, WordPress sensitive files, and WordPress version-related vulnerabilities. RedHawk uses different modules for doing all the scannings.")
         ask = tool_options()
         if ask == "1":
-            print("Checking RED_HAWK is installed or not......")
+            print(f"{colors.blue}[+] Download/usage")
+            print(f"{color.blue}Checking RED_HAWK is installed or not......{color.reset}")
             if not os.path.isdir("RED_HAWK"):
-                print("[-] RED_HAWK is not installed")
-                check_y = input("[+] Do you want to install it?(y/n)")
+                print(f"{color.red}[-] RED_HAWK is not installed{color.reset}")
+                check_y = input(f"{color.blue}[+] Do you want to install it?(y/n){color.reset}")
                 if check_y.lower() == "y" or check_y.lower()=="YES":
-                    print("[+] Installing .......")
+                    print(f"{color.green}[+] Installing .......{color.reset}")
                     os.system("git clone https://github.com/Tuhinshubhra/RED_HAWK.git")
-                    print(f"\RED_HAWK is installed at ' {os.getcwd()} ' path\n")
-                    ask_s = input("[+] Do you want to start RED_HAWK? (y/n)")
+                    print(f"{color.green}\RED_HAWK is installed at ' {os.getcwd()} ' path\n{color.reset}")
+                    ask_s = input(f"{color.blue}[+] Do you want to start RED_HAWK? (y/n){color.reset}")
                     if ask_s == "y" or ask_s == "Y" or ask_s == "yes" or ask_s == "YES":
                         os.system("cd RED_HAWK && php rhawk.php")
             else:
-                print("[+] RED_HAWK is already Installed !!")
-                ask_s= input("[+] Do you want to start RED_HAWK? (y/n)")
+                print(f"{color.green}[+] RED_HAWK is already Installed !!{color.reset}")
+                ask_s= input(f"{color.blue}[+] Do you want to start RED_HAWK? (y/n){color.reset}")
                 if ask_s == "y" or ask_s == "Y" or ask_s == "yes" or ask_s == "YES":
                     os.system("cd RED_HAWK && php rhawk.php")
 
@@ -199,20 +205,21 @@ def Th3inspector():
         banner.description("Th3inspector is an open source program which is using to exploit the network and gathering information with nmap help. Nmap command comes with lots of options that can make the utility more robust and difficult to follow for new users. Hence Dracnmap is designed to perform fast scaning with the utilizing script engine of nmap and nmap can perform various automatic scanning techniques with the advanced commands.")
         ask = tool_options()
         if ask == "1":
-            print("Checking Th3inspector is installed or not......")
+            print(f"{colors.blue}[+] Download/usage")
+            print(f"{color.blue}Checking Th3inspector is installed or not......{color.reset}")
             if not os.path.isdir("Th3inspector"):
-                print("[-] Th3inspector is not installed")
-                check_y = input("[+] Do you want to install it?(y/n)")
+                print(f"{color.red}[-] Th3inspector is not installed{color.reset}")
+                check_y = input(f"{color.blue}[+] Do you want to install it?(y/n){color.reset}")
                 if check_y.lower() == "y" or check_y.lower()=="YES":
-                    print("[+] Installing .......")
+                    print(f"{color.green}[+] Installing .......{color.reset}")
                     os.system("git clone https://github.com/Moham3dRiahi/Th3inspector.git")
-                    print(f"\Th3inspector is installed at ' {os.getcwd()} ' path\n")
-                    ask_s = input("[+] Do you want to start Th3inspector? (y/n)")
+                    print(f"{color.green}\Th3inspector is installed at ' {os.getcwd()} ' path\n{color.reset}")
+                    ask_s = input(f"{color.blue}[+] Do you want to start Th3inspector? (y/n){color.reset}")
                     if ask_s == "y" or ask_s == "Y" or ask_s == "yes" or ask_s == "YES":
                         os.system("cd Th3inspector && perl Th3inspector.pl")
             else:
-                print("[+] Th3inspector is already Installed !!")
-                ask_s= input("[+] Do you want to start Th3inspector? (y/n)")
+                print(f"{color.green}[+] Th3inspector is already Installed !!{color.reset}")
+                ask_s= input(f"{color.blue}[+] Do you want to start Th3inspector? (y/n){color.reset}")
                 if ask_s == "y" or ask_s == "Y" or ask_s == "yes" or ask_s == "YES":
                     os.system("cd Th3inspector && perl Th3inspector.pl")
 
@@ -228,6 +235,8 @@ def Hping3():
         banner.description("hping is a command-line oriented TCP/IP packet assembler/analyzer. It supports TCP, UDP, ICMP and RAW-IP protocols, has a traceroute mode, the ability to send files between a covered channel, and many other features.")
         ask=tool_options()
         if ask=="1":
+                print(f"{colors.blue}[+] Download/usage")
+                print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("hping3","--help")
                 waiting.waiting()
         elif ask=="2": 
@@ -242,6 +251,8 @@ def Arping():
         banner.description("hping is a command-line oriented TCP/IP packet assembler/analyzer. It supports TCP, UDP, ICMP and RAW-IP protocols, has a traceroute mode, the ability to send files between a covered channel, and many other features.")
         ask=tool_options()
         if ask=="1":
+                print(f"{colors.blue}[+] Download/usage")
+                print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("arping","-h")
                 waiting.waiting()
         elif ask=="2": 
@@ -256,6 +267,8 @@ def Netdiscover():
         banner.description("Netdiscover is a command-line oriented TCP/IP packet assembler/analyzer. It supports TCP, UDP, ICMP and RAW-IP protocols, has a traceroute mode, the ability to send files between a covered channel, and many other features.")
         ask=tool_options()
         if ask=="1":
+                print(f"{colors.blue}[+] Download/usage")
+                print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("netdiscover")
                 waiting.waiting()
         elif ask=="2": 
@@ -270,6 +283,8 @@ def Wafw00f():
         banner.description("Netdiscover is a command-line oriented TCP/IP packet assembler/analyzer. It supports TCP, UDP, ICMP and RAW-IP protocols, has a traceroute mode, the ability to send files between a covered channel, and many other features.")
         ask=tool_options()
         if ask=="1":
+                print(f"{colors.blue}[+] Download/usage")
+                print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("wafw00f","--help")
                 waiting.waiting()
         elif ask=="2": 
@@ -278,8 +293,8 @@ def Wafw00f():
             return
 def tool_options():
     print(f"{colors.options}1) TOOL(about,installation)")
-    print("2) Write ups")
-    print("3) go back..")
+    print(f"2) Write ups")
+    print(f"3) go back..")
     ask=input(f"{colors.select}Select an option ->{colors.reset}  ")
     return ask
 if __name__ == "__main__": 
