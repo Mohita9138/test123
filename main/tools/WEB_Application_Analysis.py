@@ -133,8 +133,8 @@ try:
                                 os.system("(./burp)")
 
                         else:
-                            professional=input("[+] Do you want it's Run it?(Y/N)")
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
+                            professional=input("[+] Do you want it's Run it?(Y/N)")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
                                 os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
                     else:
