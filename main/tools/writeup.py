@@ -1,5 +1,6 @@
 from main.tools import run_on_browser,colors,banner
 import os
+import threading
 def writeup(writeup_dist,name):
     while True:
         os.system("clear")
