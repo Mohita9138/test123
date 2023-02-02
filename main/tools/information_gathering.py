@@ -150,18 +150,18 @@ def Dracnmap():
             print(f"{colors.blue}Checking Dracnmap is installed or not......{colors.reset}")
             if not os.path.isdir("Dracnmap"):
                 print(f"{colors.red}[-] Dracnmap is not installed{colors.reset}")
-                check_y = input(f"[{colors.blue}+] Do you want to install it?(y/n):{colors.reset}")
+                check_y = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
                 if check_y == "y" or check_y== "Y" or check_y == "yes" or check_y=="YES":
                     print(f"{colors.green}[+] Installing .......")
                     os.system("git clone https://github.com/Screetsec/Dracnmap.git")
                     print(f"Dracnmap is installed at ' {os.getcwd()} ' path\n{colors.reset}")
                     use = input(f"{colors.blue}[+] Do you want to start Dracnmap? (y/n):{colors.reset}")
-                    if use[0].lower() == "y":
+                    if use.lower() == "y":
                         os.system("cd Dracnmap && chmod +x dracnmap-v2.2.sh && sudo ./dracnmap-v2.2.sh.sh")
             else:
                 print(f"{colors.green}[+] Dracnmap is already Installed !!")
                 use = input(f"{colors.blue}[+] Do you want to start Dracnmap? (y/n):{colors.reset}")
-                if use[0].lower() == "y":
+                if use.lower() == "y":
                     	os.system("cd Dracnmap && chmod +x dracnmap-v2.2.sh && ./dracnmap-v2.2.sh.sh")
         elif ask == "2":
             writeup.writeup({"How to use":"https://www.geeksforgeeks.org/dracnmap-information-gathering-and-network-exploitation-tool/ ","Other resources":"https://www.hacking.land/2016/10/dracnmap-exploit-network-and-gathering.html?utm_source=dlvr.it&utm_medium=facebook&m=1 "},"Dracnmap")
