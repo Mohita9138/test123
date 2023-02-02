@@ -114,17 +114,24 @@ try:
             banner.description("Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initialmapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities. Burp gives you full control, letting you combine advanced manual techniques with state-of-the-art automation, to make your work faster, more effective, and more fun.")
             ask=tool_writeups()
             if ask=="1":
-                    professional=input("[+] Do you want it's professional?(Y/N)")
+                    professional=input("[+] Do you want it's professional version?(Y/N)")
                     if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
                         #clone repo
                         path = 'Burp-Suite'
                         isExist = os.path.exists(path)
-                        print(isExist)
                         if isExist:
                             print("[+] It is inatalled")
                             professional=input("[+] Do you want it's Run it?(Y/N)")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
-                                os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh")
+                                os.system("echo 'Starting Keygenerator'")
+                                os.system("(java -jar keygen.jar) &")
+                                time.sleep(3)
+                                os.system("echo 'Executing Burp Suite Professional with Keyloader'")
+                                os.system('echo "java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:$(pwd)/loader.jar -noverify -jar $(pwd)/Burp_Suite_Pro.jar &" > burp')
+                                os.system("chmod +x burp")
+                                os.system("cp burp /bin/burp ")
+                                os.system("(./burp)")
+
                         else:
                             professional=input("[+] Do you want it's Run it?(Y/N)")
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
