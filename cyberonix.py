@@ -35,8 +35,8 @@ try:
         else:
             print("[-] something went wrong")
             print(nouse)
-        for i in range(5):
-            print(f"[!] Redirecting in ...{5-i}sec\r",end="")
+        for i in range(2):
+            print(f"[!] Redirecting in ...{2-i}sec\r",end="")
             time.sleep(i)
 
     def main():
