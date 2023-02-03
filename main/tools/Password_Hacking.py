@@ -368,6 +368,7 @@ def Hashcat():
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("hashcat", True)
+                waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -380,7 +381,6 @@ def Hashcat():
         else:
             return
 
-        waiting.waiting()
     pass
 
 
@@ -401,6 +401,7 @@ def John_The_Ripper():
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("john", True)
+                waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -412,7 +413,7 @@ def John_The_Ripper():
                 , "Hashcat writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -431,6 +432,7 @@ def Hydra():
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("hydra", True)
+                waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -442,7 +444,7 @@ def Hydra():
         else:
             return
 
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -461,6 +463,7 @@ def Johnny():
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("johnny")
+                waiting.waiting()
         elif ask == "2":
             # first argument for dictionary(key=title,value=url) second argument for banner
             writeup.writeup(
@@ -470,7 +473,7 @@ def Johnny():
                 , "Johnny writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -498,7 +501,7 @@ def CrackStation():
                 , "Crackstation writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -526,7 +529,7 @@ def CyberChef():
                 , "CyberChef writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -549,6 +552,7 @@ def Medusa():
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("medusa", True)
+                waiting.waiting()
 
         elif ask == "2":
 
@@ -560,7 +564,7 @@ def Medusa():
                 , "Medusa writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -583,6 +587,7 @@ def Ncrack():
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("ncrack", True)
+                waiting.waiting()
 
         elif ask == "2":
 
@@ -594,7 +599,7 @@ def Ncrack():
                 , "Ncrack writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -631,7 +636,7 @@ def RainbowCrack():
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         # when tool is of gui it needs thread
                         os.system("rcrack")
-                    pass
+            waiting.waiting()
 
         elif ask == "2":
 
@@ -643,7 +648,7 @@ def RainbowCrack():
                 , "rainbow crack writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -662,6 +667,7 @@ def ophCrack():
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("ophcrack")
+                waiting.waiting()
 
         elif ask == "2":
 
@@ -672,7 +678,7 @@ def ophCrack():
                 , "oph crack writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -694,6 +700,7 @@ def Crunch():
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("crunch", True)
+                waiting.waiting()
 
         elif ask == "2":
 
@@ -708,7 +715,7 @@ def Crunch():
                 , "Crunch writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -728,6 +735,7 @@ def Cupp():
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\nPreinstalled in Repository{colors.reset}")
                 check_installed("cupp", True)
+                waiting.waiting()
 
         elif ask == "2":
 
@@ -742,7 +750,7 @@ def Cupp():
                 , "cupp writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -781,6 +789,7 @@ def bopscrk():
                         # when tool is of gui it needs thread
                         os.system("bopscrk -h")
                     pass
+            waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -792,7 +801,7 @@ def bopscrk():
                 , "cupp writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -832,6 +841,7 @@ def SET():
                         # when tool is of gui it needs thread
                         os.system("setoolkit")
                     pass
+            waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -843,7 +853,7 @@ def SET():
                 , "set writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -872,6 +882,7 @@ def HiddenEye():
                     os.system("cd HiddenEye && python HiddenEye.py && cd ..")
             else:
                 pass
+            waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -884,7 +895,7 @@ def HiddenEye():
                 , "HiddenEye writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -912,6 +923,7 @@ def r3bu5():
                     os.system("cd r3bu5 && bash r3bu5.sh  && cd ..")
             else:
                 pass
+            waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -922,7 +934,7 @@ def r3bu5():
                 , "r3bu5 writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -954,6 +966,7 @@ def zphisher():
                     os.system("cd zphisher && ./zphisher.sh && cd ..")
             else:
                 pass
+            waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -965,7 +978,7 @@ def zphisher():
                 , "zphisher writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -996,6 +1009,7 @@ def Shellphish():
                     os.system("cd ShellPhish && ./shellphish.sh && cd .. ")
             else:
                 pass
+            waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -1006,7 +1020,7 @@ def Shellphish():
                 , "Shellphish writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -1040,6 +1054,7 @@ def Gophish():
 
             else:
                 pass
+            waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -1050,7 +1065,7 @@ def Gophish():
                 , "Gophish writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
     pass
 
 
@@ -1081,6 +1096,7 @@ def ZLogger():
                     os.system("cd ZLogger && python zlogger.py -h && cd ..")
             else:
                 pass
+            waiting.waiting()
         elif ask == "2":
 
             # first argument for dictionary(key=title,value=url) second argument for banner
@@ -1093,7 +1109,7 @@ def ZLogger():
                 , "ZLogger writeup.writeup")
         else:
             return
-        waiting.waiting()
+        # waiting.waiting()
 
 
 if __name__ == "__main__":
