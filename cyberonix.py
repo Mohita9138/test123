@@ -54,7 +54,7 @@ try:
             banner.main()
             list_attacks=["TOOLS","CHEATSHEET","NEWS","exit"]
             for i in range(len(list_attacks)):
-                print({colors.options},f"{i}) {list_attacks[i]}".title(),{colors.reset})
+                print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
             option=input(f"\n {colors.select}Select an option ->{colors.reset}  ".title())
             if option=="0":
                 os.system("clear")
