@@ -15,7 +15,7 @@ def clear():
 
 
 def check_installed(name, needargs=False):
-    proc = subprocess.Popen([f"dpkg -s {name} >2/dev/null"], stdout=subprocess.PIPE, shell=True)
+    proc = subprocess.Popen([f"dpkg -s {name} 2>/dev/null"], stdout=subprocess.PIPE, shell=True)
     # there keyfor success output and noththere for error output
     (there, notthere) = proc.communicate()
     if "install ok installed" not in there.decode():
