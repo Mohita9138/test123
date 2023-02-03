@@ -24,7 +24,7 @@ try:
             elif "not a git repository" in use.decode():
                 print("[-] IT is not a github repository".title())
             elif "Updating" in use.decode():
-                print("[+] updating....".title())
+                print("[+] updating.....".title())
                 print(use.decode())
                 print("\u001b[32m[+] Cyberonix is UPDATED To Latest Version")
                 proc = subprocess.Popen([f"cyberonix 2>/dev/null"], stdout=subprocess.PIPE, shell=True)
