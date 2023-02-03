@@ -55,7 +55,7 @@ try:
             list_attacks=["TOOLS","CHEATSHEET","NEWS","exit"]
             for i in range(len(list_attacks)):
                 print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
-            option=input(f"\n Select An Option ->  ".title())
+            option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
             if option=="0":
                 os.system("clear")
                 tool.main()
