@@ -17,16 +17,16 @@ def check_installed(name, needargs=False):
         print(f"{colors.red}[-] not installed")
         print(f"[+] it is not installed in your Kali{colors.reset}")
         download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
-        if download[0].lower() == "y":
+        if download.lower() == "y":
             os.system(f"apt install {name} -y")
             if needargs:
                 download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-                if download[0].lower() == "y":
+                if download.lower() == "y":
                     # when tool is of cli no need of thread
                     thread_run(name, needargs)
             else:
                 download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-                if download[0].lower() == "y":
+                if download.lower() == "y":
                     # when tool is of gui it needs thread
                     threading.Thread(target=thread_run, args=(name,)).start()
     else:
@@ -34,12 +34,12 @@ def check_installed(name, needargs=False):
         print(f"[+] It is installed in your kali{colors.reset}")
         if needargs:
             download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-            if download[0].lower() == "y":
+            if download.lower() == "y":
                 # when tool is of cli no need of thread
                 thread_run(name, needargs)
         else:
             download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-            if download[0].lower() == "y":
+            if download.lower() == "y":
                 # when tool is of gui it needs thread
                 threading.Thread(target=thread_run, args=(name,)).start()
                 if name == 'kismet':
@@ -196,7 +196,6 @@ Attacking: Replay attacks, deauthentication, fake access points and others via p
 Testing: Checking WiFi cards and driver capabilities (capture and injection).
 Cracking: WEP and WPA PSK (WPA 1 and 2).
 All tools are command line which allows for heavy scripting. A lot of GUIs have taken advantage of this feature. It works primarily on Linux but also Windows, macOS, FreeBSD, OpenBSD, NetBSD, as well as Solaris and even eComStation 2.''')
-                
         ask = tool_options()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage{colors.reset}")
