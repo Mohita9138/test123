@@ -232,7 +232,7 @@ try:
                                     print(f"{colors.blue}[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO{colors.reset}")
                                     use=input(f"{colors.blue}[+] Do you want to configure Nessus?(y/n):{colors.reset}")
                                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
-                                        threading.Thread(target=run_on_browser.main, args=("https://kali:8834/",)).start()
+                                        threading.Thread(target=run_on_browser.main, args=("https://localhost:8834/",)).start()
                 waiting.waiting()
                 #check_installed("wapiti",True)
                 
