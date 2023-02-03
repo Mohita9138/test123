@@ -22,4 +22,4 @@ def main(URL):
             os.system(f"sudo chown root:root /run/user/{uid[2]}/gdm/Xauthority > /dev/null 2>&1")
             # os.system(f"firefox {URL} 2>/dev/null")
             os.system(f"sudo chown root:root /home/{there[2]}/.Xauthority > /dev/null 2>&1")
-            os.system(f"firefox {URL} 2>/dev/null")
+            os.system(f"firefox {URL} > /dev/null 2>&1")
