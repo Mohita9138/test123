@@ -28,8 +28,10 @@ try:
                 print(use.decode())
                 print("\u001b[32m[+] Cyberonix is UPDATED To Latest Version")
                 try:
-                    subprocess.run(['cyberonix'], check = True)
-                except subprocess.CalledProcessError:
+                    subprocess.run(['cyberonix'],shell=True, check = True)
+                except Exception as err:
+                    print(err)
+                    time.sleep(5)
                     os.system("python3 cyberonix.py")
             else:
                 print("[-] Something went wrong....".title())
