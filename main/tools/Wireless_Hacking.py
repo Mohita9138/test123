@@ -188,8 +188,8 @@ def Aircrack():
         os.system("clear")
         banner.main()
         banner.attack("Aircrack-ng")
-        github = github_getting_text("https://github.com/aircrack-ng/aircrack-ng", 'p[dir="auto"]', 1)
-        github += github_getting_text("https://github.com/aircrack-ng/aircrack-ng", 'ul[dir="auto"]', 0)
+        github = github_getting_text("https://github.com/aircrack-ng/aircrack-ng", 'p[dir="auto"]', 0)
+        # github += github_getting_text("https://github.com/aircrack-ng/aircrack-ng", 'ul[dir="auto"]', 0)
         banner.description(github)
         
         ask = tool_options()
