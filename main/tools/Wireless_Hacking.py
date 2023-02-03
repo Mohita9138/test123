@@ -86,36 +86,37 @@ def main():
         print(f"{colors.options}{i}) {list_attacks[i]}{colors.reset}")
 
     option = input(f"\n{colors.select} Select an option -> {colors.reset} ")
-    if option == "0":
-        print("\n[+] Kismet")
-        os.system("clear")
-        Kismet()
-    elif option == "1":
-        print("\n[+] Wifite")
-        os.system("clear")
-        Wifite()
-    elif option == "2":
-        print("\n[+] Fern Wifi Cracker")
-        os.system("clear")
-        Fern_wifi()
-    elif option == "3":
-        print("\n[+] Aircrack-ng")
-        os.system("clear")
-        Aircrack()
-    elif option == "4":
-        print("\n[+] Fluxion")
-        os.system("clear")
-        Fluxion()
-    elif option == "5":
-        print("\n[+] Wifiphisher")
-        os.system("clear")
-        Wifiphisher()
-    elif option == "6":
-        print("\n[+] Bettercap")
-        os.system("clear")
-        Bettercap()
-    else:
-        return
+    while True:
+        if option == "0":
+            print("\n[+] Kismet")
+            os.system("clear")
+            Kismet()
+        elif option == "1":
+            print("\n[+] Wifite")
+            os.system("clear")
+            Wifite()
+        elif option == "2":
+            print("\n[+] Fern Wifi Cracker")
+            os.system("clear")
+            Fern_wifi()
+        elif option == "3":
+            print("\n[+] Aircrack-ng")
+            os.system("clear")
+            Aircrack()
+        elif option == "4":
+            print("\n[+] Fluxion")
+            os.system("clear")
+            Fluxion()
+        elif option == "5":
+            print("\n[+] Wifiphisher")
+            os.system("clear")
+            Wifiphisher()
+        elif option == "6":
+            print("\n[+] Bettercap")
+            os.system("clear")
+            Bettercap()
+        else:
+            return
 
 
 def Kismet():
