@@ -1036,10 +1036,7 @@ def Gophish():
                     print(f"{colors.blue}[+] Downloading.......{colors.reset}")
                     time.sleep(2)
                     os.system("mkdir gophish && cd gophish && wget https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit.zip && unzip gophish-v0.12.1-linux-64bit.zip > /dev/null 2>&1 && chmod +x gophish && ./gophish && cd ..")
-
-                # output = subprocess.Popen(["./gophish"], shell=True, stdout=subprocess.DEVNULL,
-                #                           stderr=subprocess.DEVNULL)
-                run_on_browser.main("https://127.0.0.1:3333/")
+                    run_on_browser.main("https://127.0.0.1:3333/")
 
             else:
                 pass
