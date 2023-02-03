@@ -9,34 +9,34 @@ try:
     def exit_program():
         os.system("clear")
         banner.main()
-        print("\033[38;5;105m[+] Thanks visit again")
+        print("\033[38;5;105m[+] Thanks visit again".title())
         exit()
     def update():
         os.system("clear")
         banner.main()
         banner.attack("Update")
-        print("[+] Checking for update.....")
+        print("[+] Checking for update.....".title())
         process = subprocess.Popen("git checkout . && git pull ",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
         (use,nouse)=process.communicate()
         if not nouse:
             if "Already up to date" in use.decode():
-                print("[+] it is updated")
+                print("[+] it is updated".title())
             elif "not a git repository" in use.decode():
-                print("[-] IT is not a github repository")
+                print("[-] IT is not a github repository".title())
             elif "Updating" in use.decode():
-                print("[+] updating...")
+                print("[+] updating...".title())
                 print(use.decode())
-                print("\u001b[32m[+] Cyberonix is UPDATED to latest version")
+                print("\u001b[32m[+] Cyberonix is UPDATED To Latest Version")
                 os.system("cyberonix")
                 exit()
             else:
-                print("[-] Something went wrong....")
+                print("[-] Something went wrong....".title())
                 print(use.decode())
         else:
-            print("[-] something went wrong")
+            print("[-] something went wrong".title())
             print(nouse)
         for i in range(2):
-            print(f"[!] Redirecting in ...{2-i}sec\r",end="")
+            print(f"[!] Redirecting in ...{2-i}sec\r".title(),end="")
             time.sleep(i)
 
     def main():
@@ -54,8 +54,8 @@ try:
             banner.main()
             list_attacks=["TOOLS","CHEATSHEET","NEWS","exit"]
             for i in range(len(list_attacks)):
-                print(f"{colors.options}{i}) {list_attacks[i]}{colors.reset}")
-            option=input(f"\n {colors.select}Select an option ->{colors.reset}  ")
+                print(f"{colors.options}{i}) {list_attacks[i]}{colors.reset}".title())
+            option=input(f"\n {colors.select}Select an option ->{colors.reset}  ".title())
             if option=="0":
                 os.system("clear")
                 tool.main()

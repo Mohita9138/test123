@@ -14,14 +14,13 @@ def cheat(cheatSheet,name):
     while True:
         os.system("clear")
         banner.main()   
-        banner.attack(name)
+        banner.attack(name.title())
 
         key=list(cheatSheet.keys())
-        key.append("go back")
+        key.append("go back".title())
         for i in range(len(key)):
-            print(f"{colors.options}{i}) {key[i]}{colors.reset}")
-        option = input(f"\n {colors.select}Select an option ->{colors.reset}  ")
-        #1-9=int kdsjfhgkjds=int X to type cast safely 
+            print(f"{colors.options}{i}) {key[i]}{colors.reset}".title())
+        option = input(f"\n {colors.select}Select an option ->{colors.reset}  ".title())
         try:
             threading.Thread(target=run_on_browser.main, args=(cheatSheet[key[int(option)]],)).start()
                 
