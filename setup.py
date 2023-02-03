@@ -23,7 +23,7 @@ def create_symlink():
     f.write(f'cd {there[0]} && python3 cyberonix.py "$@"')
     f.close()
     os.system("chmod +x *")
-    os.system("sudo cp run.sh /usr/bin/cyberonix")
+    os.system("sudo mv run.sh /usr/bin/cyberonix")
     finish()
 def finish():
     os.system("clear")
