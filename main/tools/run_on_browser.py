@@ -3,7 +3,7 @@ import os
 def main(URL):
         # print("[+] Opening url")
         print("[+] Opening Article")
-        proc = subprocess.Popen([f"pwd"], stdout=subprocess.PIPE, shell=True)
+        proc = subprocess.popen([f"pwd"], stdout=subprocess.pipe, shell=true)
         #there keyfor success output and noththere for error output
         (there, notthere) = proc.communicate()
         there=there.decode()
@@ -22,4 +22,8 @@ def main(URL):
             os.system(f"sudo chown root:root /run/user/{uid[2]}/gdm/Xauthority > /dev/null 2>&1")
             # os.system(f"firefox {URL} 2>/dev/null")
             os.system(f"sudo chown root:root /home/{there[2]}/.Xauthority > /dev/null 2>&1")
-            os.system(f"firefox {URL} 2>/dev/null")
+            # os.system(f"firefox {URL} 2>/dev/null")
+            proc = subprocess.popen([f"firefox {url} 2>/dev/null"], stdout=subprocess.pipe, shell=true)
+            #there keyfor success output and noththere for error output
+            (there, notthere) = proc.communicate()
+
