@@ -11,9 +11,9 @@ def main():
         list_attacks=["Information Gathering","Vulnerability Analysis","Web Application Analysis","Password Attacks","Wireless Attacks","Exploitation Tools","Sniffing and Spoofing","Post Exploitation","Pentesting and Bug-Bounty","go back"]
         #for output with index
         for i in range(len(list_attacks)):
-            print(f"{colors.options}{i}) {list_attacks[i]}{colors.reset}".title())
+            print(colors.options,f"{i}) {list_attacks[i]}{colors.reset}".title())
 
-        option = input(f"\n{colors.select} Select an option -> {colors.reset} ".title())
+        option = input(f"\n Select An option ->  ".title())
         if option == "0":
             print("\n[+] Information Gathering Section")
             os.system("clear")

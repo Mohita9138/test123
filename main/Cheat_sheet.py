@@ -19,8 +19,8 @@ def cheat(cheatSheet,name):
         key=list(cheatSheet.keys())
         key.append("go back".title())
         for i in range(len(key)):
-            print(f"{colors.options}{i}) {key[i]}{colors.reset}".title())
-        option = input(f"\n {colors.select}Select an option ->{colors.reset}  ".title())
+            print(,colors.options,f"{i}) {key[i]}".title(),colors.reset)
+        option = input(f"\n Select An Option ->  ".title())
         try:
             threading.Thread(target=run_on_browser.main, args=(cheatSheet[key[int(option)]],)).start()
                 

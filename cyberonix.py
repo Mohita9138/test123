@@ -9,7 +9,7 @@ try:
     def exit_program():
         os.system("clear")
         banner.main()
-        print("\033[38;5;105m[+] Thanks visit again".title())
+        print("\033[38;5;105m","[+] Thanks visit again".title())
         exit()
     def update():
         os.system("clear")
@@ -55,7 +55,7 @@ try:
             list_attacks=["TOOLS","CHEATSHEET","NEWS","exit"]
             for i in range(len(list_attacks)):
                 print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
-            option=input(f"\n {colors.select}Select an option ->{colors.reset}  ".title())
+            option=input(colors.select,f"\n Select an option ->  ".title(),colors.reset)
             if option=="0":
                 os.system("clear")
                 tool.main()

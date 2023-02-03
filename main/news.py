@@ -38,7 +38,7 @@ def main():
     banner.attack("News")
     ask=input("Do you want news Date wise?(y/n)".title())
     if ask.lower()=="y" or ask.lower()=="y":
-        date_user=input("enter date:(YYYY-MM-DD)")
+        date_user=input("Enter Date:(YYYY-MM-DD)")
         get_news(f"https://thehackernews.com/search?updated-max={date_user}T17:23:00%2B05:30&max-results=10")
     else:
         get_news()
