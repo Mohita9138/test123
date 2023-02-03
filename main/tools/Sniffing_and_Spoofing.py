@@ -26,7 +26,7 @@ def check_installed(name,needargs=False):
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
                             
-                            os.system(name)
+                            os.system(f"{name} > /dev/null 2>&1")
     else:
                 print(f"{colors.green}[+] Installed")
                 print(f"[+] it is installed in your kali{colors.reset}")
