@@ -287,7 +287,7 @@ try:
             if ask=="1":
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\n Preinstalled in Repository{colors.reset}")
-                check_installed("skipfish",True)
+                check_installed("nuclei",True)
                 waiting.waiting()
             elif ask=="2":
                 writeup.writeup({"Nuclei - Automated Vulnerability Scanning Tool":"https://allabouttesting.org/nuclei-automated-vulnerability-scanning-tool/","Nuclei – Fast and Customizable Vulnerability Scanner":"https://www.geeksforgeeks.org/nuclei-fast-and-customizable-vulnerability-scanner/","Gauing+Nuclei for Instant Bounties":"https://infosecwriteups.com/gauing-nuclei-for-instant-bounties-7a8a07979fff ","DevSecOps 101 Part 3: Scanning Live Web Applications with Nuclei":"https://escape.tech/blog/devsecops-part-iii-scanning-live-web-applications"},"Nuclei writeup.writeup")
