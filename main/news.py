@@ -27,7 +27,7 @@ def get_news(url="https://thehackernews.com/"):
     dates = []
     for date in soup.find_all("span", class_="h-datetime"):
         if '<img alt="external link"' not in str(date):
-            dates.append(date.get_text()[2:].split('\n')[0].strip())
+            dates.append(date.get_text()[1:].split('\n')[0].strip())
 
     for title, date, url,description in zip(titles, dates, urls,discription_post):
         print(f"\n\u001b[33mTitle: {title}\u001b[0m \n\u001b[32mdescription: {description}\u001b[0m  \nDate: {date} \n\u001b[34mURL: {url}\u001b[0m \n\n")
