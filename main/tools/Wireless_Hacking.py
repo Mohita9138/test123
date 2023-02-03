@@ -200,7 +200,7 @@ All tools are command line which allows for heavy scripting. A lot of GUIs have 
         ask = tool_options()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage{colors.reset}")
-            print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
+            print(f"{colors.blue}Preinstalled in Repository{colors.reset}")
             check_installed("aircrack-ng", True)
             waiting.waiting()
         elif ask == "2":
