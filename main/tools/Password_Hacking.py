@@ -765,7 +765,7 @@ def bopscrk():
             ask_install = input(f"{colors.blue}[+] Do you want to install bopscrk or not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install bopscrk using pip
-                output = subprocess.check_output("which bopscrk", shell=True)
+                output = subprocess.check_output("which bopscrk")
                 if "bopscrk" not in output.decode():
                     print(f"{colors.red}[-] not installed{colors.reset}")
                     download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
