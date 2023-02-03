@@ -615,7 +615,7 @@ def RainbowCrack():
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage")
             print(f"\nPreinstalled in Repository{colors.reset}")
-            ask_install = input(f"{colors.blue}[+] Do you want to install RainbowCrack or not?(y/n):{color.reset}")
+            ask_install = input(f"{colors.blue}[+] Do you want to install RainbowCrack or not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 output = subprocess.check_output("which rcrack", shell=True)
                 if "rcrack" not in output.decode():
