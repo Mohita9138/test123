@@ -1032,6 +1032,8 @@ def Gophish():
                 # install Gophish
                 if  os.path.isdir("gophish"):
                     os.system("cd gophish && chmod +x gophish && ./gophish")
+                    run_on_browser.main("https://127.0.0.1:3333/")
+
                 else:
                     print(f"{colors.blue}[+] Downloading.......{colors.reset}")
                     time.sleep(2)
