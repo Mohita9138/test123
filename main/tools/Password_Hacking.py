@@ -1094,12 +1094,11 @@ def ZLogger():
         ask = first_list()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage")
-            print(f"\nPreinstalled in Repository{colors.reset}")
             ask_install = input(f"{colors.blue}[+] Do you want to install ZLogger or not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install ZLogger
                 if os.path.exists("ZLogger"):
-                    print(f"{colors.red}[+] Tool is already exits !!{colors.reset}")
+                    print(f"{colors.green}[+] Installed \n[+] It is installed in your kali{colors.reset}")
                     pass
                 else:
                     os.system("git clone https://github.com/z00z/ZLogger && cd ZLogger && pip install pynput")
