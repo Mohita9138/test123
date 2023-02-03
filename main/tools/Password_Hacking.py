@@ -1,3 +1,4 @@
+from os.path import isdir
 from main.tools import banner,run_on_browser,waiting,writeup,colors
 import os
 import subprocess
@@ -1029,18 +1030,12 @@ def Gophish():
             ask_install = input(f"{colors.blue}[+] Do you want to install Gophish or not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install Gophish
-                print(f"{colors.blue}[+] Downloading.......{colors.reset}")
-                time.sleep(2)
-
-                # if [ -d 'Gophish' ]; then echo 'Already Exists'; else sudo mkdir Gophish && cd Gophish && sudo wget
-                # https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit.zip
-                # 2>/dev/null && sudo unzip gophish-v0.12.1-linux-64bit.zip >/dev/null && sudo chmod +x gophish && (
-                # sudo ./gophish 2>/dev/null &) && cd .. ; fi
-
-                os.system("mkdir Gophish && cd Gophish && wget "
-                          "https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit"
-                          ".zip && unzip gophish-v0.12.1-linux-64bit.zip > /dev/null 2>&1 && chmod +x gophish && "
-                          "./gophish && cd ..")
+                if os.path.isdir("gophish"):
+                    os.system("cd gophish && chmod +x gophish && ./gophish")
+                else:
+                    print(f"{colors.blue}[+] Downloading.......{colors.reset}")
+                    time.sleep(2)
+                    os.system("mkdir gophish && cd Gophish && wget https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit.zip && unzip gophish-v0.12.1-linux-64bit.zip > /dev/null 2>&1 && chmod +x gophish && ./gophish && cd ..")
 
                 # output = subprocess.Popen(["./gophish"], shell=True, stdout=subprocess.DEVNULL,
                 #                           stderr=subprocess.DEVNULL)
