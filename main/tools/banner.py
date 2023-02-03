@@ -7,7 +7,8 @@ def main():
     ██         ██    ██   ██ ██      ██   ██ ██    ██ ██  ██ ██ ██  ██ ██  
      ██████    ██    ██████  ███████ ██   ██  ██████  ██   ████ ██ ██   ██ 
                                                                            v1.0
-                                        \033[38;5;81mBy team Metaxone Solution
+    \033[38;5;81mBy Team Metaxone Solution And Technical Navigator
+
     ''')
     print("\u001b[37m--------------------------------------------------------------------------------")
     print("\t\t\033[38;5;226mA Complete Recource Hub For Cyber Securty Community")
