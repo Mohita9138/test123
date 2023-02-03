@@ -200,8 +200,6 @@ All tools are command line which allows for heavy scripting. A lot of GUIs have 
         ask = tool_options()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage{colors.reset}")
-            github = github_getting_text("https://www.kali.org/tools/aircrack-ng/", 'pre', 38)
-            print(github)
             print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
             check_installed("aircrack-ng", "--help")
             waiting.waiting()
