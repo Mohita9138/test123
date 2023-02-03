@@ -27,7 +27,10 @@ try:
                 print("[+] updating...".title())
                 print(use.decode())
                 print("\u001b[32m[+] Cyberonix is UPDATED To Latest Version")
-                os.system("cyberonix")
+                proc = subprocess.Popen([f"cyberonix"], stdout=subprocess.PIPE, shell=True)
+                (there, notthere) = proc.communicate()
+                if "cyberonix: not found" in there.decode():
+                    os.system("python3 cyberonix.py")
                 exit()
             else:
                 print("[-] Something went wrong....".title())
