@@ -1,5 +1,5 @@
 from inspect import ClosureVars
-from main.tools import banner,run_on_browser,waiting,writeup,colors
+from main.tools import banner,run_on_browser,waiting,writeup,colors,Sniffing_and_Spoofing
 import os
 import subprocess
 import threading
@@ -114,7 +114,7 @@ def main():
         elif option == "6":
             print("\n[+] Bettercap")
             os.system("clear")
-            Bettercap()
+            Sniffing_and_Spoofing.Bettercap()
         else:
             return
 
