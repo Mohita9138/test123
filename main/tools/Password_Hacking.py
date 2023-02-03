@@ -946,7 +946,7 @@ def zphisher():
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install zphisher
                 if os.path.exists("zphisher"):
-                    print(f"{colors.red}[+] installed \n[+] it is installed in your kali{colors.reset}")
+                    print(f"{colors.green}[+] installed \n[+] it is installed in your kali{colors.reset}")
                     pass
                 else:
                     os.system("git clone https://github.com/htr-tech/zphisher && cd zphisher && chmod +x zphisher.sh")
