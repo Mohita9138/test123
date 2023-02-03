@@ -222,7 +222,7 @@ try:
                                     print(f"{colors.blue}[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO{colors.reset}")
                                     use=input(f"{colors.blue}[+] Do you want to configure Nessus?(y/n):{colors.reset}")
                                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
-                                        threading.Thread(target=run_on_browser.main, args=("https://127.0.0.1:8834/",)).start()
+                                        threading.Thread(target=run_on_browser.main, args=("https://127.0:8834/",)).start()
                 else:
                     print(f"{colors.green}[+] It is installed in you pc......{colors.reset}")
                     use=input(f"{colors.blue}[+] Do you want to start it's services?(y/n):{colors.reset}")
