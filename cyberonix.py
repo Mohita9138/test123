@@ -30,17 +30,16 @@ try:
                 try:
                     subprocess.run('cyberonix',shell=True, check = True)
                 except Exception as err:
-                    print(err)
-                    time.sleep(5)
                     os.system("python3 cyberonix.py")
+                exit()
             else:
                 print("[-] Something went wrong....".title())
                 print(use.decode())
         else:
             print("[-] something went wrong".title())
             print(nouse)
-        for i in range(2):
-            print(f"[!] Redirecting in ...{2-i}sec\r".title(),end="")
+        for i in range(5):
+            print(f"[!] Redirecting in ...{5-i}sec\r".title(),end="")
             time.sleep(i)
 
     def main():
