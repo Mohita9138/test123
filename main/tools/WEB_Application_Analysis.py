@@ -26,18 +26,18 @@ try:
                                 #when tool is of gui it needs thread
                                 threading.Thread(target=thread_run, args=(name,)).start()
         else:
-                    print(f"{colors.green}[+] Installed")
-                    print(f"[+] it is installed in your kali{colors.reset}")
-                    if needargs:
-                            download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-                            if download=="y" or download=="Y" or download=="Yes" or download=="yes":
-                                #when tool is of cli no need of thread
-                                thread_run(name,needargs)
-                    else:
-                            download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-                            if download=="y" or download=="Y" or download=="Yes" or download=="yes":
-                                #when tool is of gui it needs thread
-                                threading.Thread(target=thread_run, args=(name,)).start()
+            print(f"{colors.green}[+] Installed")
+            print(f"[+] it is installed in your kali{colors.reset}")
+            if needargs:
+                    download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    if download=="y" or download=="Y" or download=="Yes" or download=="yes":
+                        #when tool is of cli no need of thread
+                        thread_run(name,needargs)
+            else:
+                    download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    if download=="y" or download=="Y" or download=="Yes" or download=="yes":
+                        #when tool is of gui it needs thread
+                        threading.Thread(target=thread_run, args=(name,)).start()
     
     def thread_run(command,needargs=False):
         if needargs=="no-help":
@@ -222,7 +222,7 @@ try:
                                     print(f"{colors.blue}[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO{colors.reset}")
                                     use=input(f"{colors.blue}[+] Do you want to configure Nessus?(y/n):{colors.reset}")
                                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
-                                        threading.Thread(target=run_on_browser.main, args=("https://localhost:8834/#/",)).start()
+                                        threading.Thread(target=run_on_browser.main, args=("https://localhost:8834/",)).start()
                 else:
                     print(f"{colors.green}[+] It is installed in you pc......{colors.reset}")
                     use=input(f"{colors.blue}[+] Do you want to start it's services?(y/n):{colors.reset}")
@@ -232,7 +232,7 @@ try:
                                     print(f"{colors.blue}[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO{colors.reset}")
                                     use=input(f"{colors.blue}[+] Do you want to configure Nessus?(y/n):{colors.reset}")
                                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
-                                        threading.Thread(target=run_on_browser.main, args=("https://localhost:8834/",)).start()
+                                        threading.Thread(target=run_on_browser.main, args=("https://kali:8834/",)).start()
                 waiting.waiting()
                 #check_installed("wapiti",True)
                 
@@ -287,7 +287,7 @@ try:
             if ask=="1":
                 print(f"{colors.blue}[+] Download/usage")
                 print(f"\n Preinstalled in Repository{colors.reset}")
-                check_installed("nuclei",True)
+                check_installed("skipfish",True)
                 waiting.waiting()
             elif ask=="2":
                 writeup.writeup({"Nuclei - Automated Vulnerability Scanning Tool":"https://allabouttesting.org/nuclei-automated-vulnerability-scanning-tool/","Nuclei – Fast and Customizable Vulnerability Scanner":"https://www.geeksforgeeks.org/nuclei-fast-and-customizable-vulnerability-scanner/","Gauing+Nuclei for Instant Bounties":"https://infosecwriteups.com/gauing-nuclei-for-instant-bounties-7a8a07979fff ","DevSecOps 101 Part 3: Scanning Live Web Applications with Nuclei":"https://escape.tech/blog/devsecops-part-iii-scanning-live-web-applications"},"Nuclei writeup.writeup")
