@@ -489,7 +489,7 @@ def CrackStation():
                            "easily guessable passwords that should be changed.")
         ask = first_list()
         if ask == "1":
-            run_on_browser.main("https://crackstation.net/")
+            threading.Thread(target=run_on_browser.main, args=("https://crackstation.net/",)).start()
             pass
         elif ask == "2":
             # first argument for dictionary(key=title,value=url) second argument for banner
