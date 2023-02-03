@@ -15,7 +15,7 @@ try:
         os.system("clear")
         banner.main()
         banner.attack("Update")
-        print("[+] Checking for update.....".title())
+        print("[+] Checking for update....".title())
         process = subprocess.Popen("git checkout . && git pull ",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
         (use,nouse)=process.communicate()
         if not nouse:
