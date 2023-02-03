@@ -2,12 +2,11 @@ from main.tools import banner,run_on_browser,waiting,writeup,colors
 import os
 import subprocess
 import threading
-import time
 import requests
 from bs4 import BeautifulSoup
 try:
     def check_installed(name,needargs=False):
-        proc = subprocess.Popen([f"dpkg -s {name} 2 >/dev/null"], stdout=subprocess.PIPE, shell=True)
+        proc = subprocess.Popen([f"dpkg -s {name} 2>/dev/null"], stdout=subprocess.PIPE, shell=True)
         #there keyfor success output and noththere for error output
         (there, notthere) = proc.communicate()
         if "install ok installed" not in there.decode():
