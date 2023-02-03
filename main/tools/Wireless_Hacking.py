@@ -10,15 +10,31 @@ from bs4 import BeautifulSoup
 
 def check_installed(name, needargs=False):
     proc = subprocess.Popen(
-        [f"dpkg -s {name}"], stdout=subprocess.PIPE, shell=True)
+        [f"dpkg -s {name} 2>/dev/null"], stdout=subprocess.PIPE, shell=True)
     # there keyfor success output and noththere for error output
     (there, notthere) = proc.communicate()
-    if "install ok installed" not in there.decode():
-        print(f"{colors.red}[-] not installed")
-        print(f"[+] it is not installed in your Kali{colors.reset}")
-        download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
-        if download.lower() == "y":
-            os.system(f"apt install {name} -y")
+    if notthere:
+        print(notthere)
+    else:
+        if "install ok installed" not in there.decode():
+            print(f"{colors.red}[-] not installed")
+            print(f"[+] it is not installed in your Kali{colors.reset}")
+            download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
+            if download.lower() == "y":
+                os.system(f"apt install {name} -y")
+                if needargs:
+                    download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    if download.lower() == "y":
+                        # when tool is of cli no need of thread
+                        thread_run(name, needargs)
+                else:
+                    download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    if download.lower() == "y":
+                        # when tool is of gui it needs thread
+                        threading.Thread(target=thread_run, args=(name,)).start()
+        else:
+            print(f"{colors.green}[+] Installed")
+            print(f"[+] It is installed in your kali{colors.reset}")
             if needargs:
                 download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                 if download.lower() == "y":
@@ -29,24 +45,11 @@ def check_installed(name, needargs=False):
                 if download.lower() == "y":
                     # when tool is of gui it needs thread
                     threading.Thread(target=thread_run, args=(name,)).start()
-    else:
-        print(f"{colors.green}[+] Installed")
-        print(f"[+] It is installed in your kali{colors.reset}")
-        if needargs:
-            download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-            if download.lower() == "y":
-                # when tool is of cli no need of thread
-                thread_run(name, needargs)
-        else:
-            download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-            if download.lower() == "y":
-                # when tool is of gui it needs thread
-                threading.Thread(target=thread_run, args=(name,)).start()
-                if name == 'kismet':
-                    print(f"[+] {name} is started at address: http://localhost:2501 (or the address of this system) for the Kismet UI")
-                    KURL = "http://localhost:2501" 
-                    threading.Thread(target=run_on_browser.main, args=(KURL,)).start()
-                    # os.system(f"firefox http://localhost:2501 2>/dev/null")
+                    if name == 'kismet':
+                        print(f"[+] {name} is started at address: http://localhost:2501 (or the address of this system) for the Kismet UI")
+                        KURL = "http://localhost:2501" 
+                        threading.Thread(target=run_on_browser.main, args=(KURL,)).start()
+                        # os.system(f"firefox http://localhost:2501 2>/dev/null")
 
 def thread_run(command, needargs=False):
     
