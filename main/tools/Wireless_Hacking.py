@@ -273,30 +273,6 @@ def Wifiphisher():
         else:
             return
 
-
-def Bettercap():
-    while True:
-        os.system("clear")
-        banner.main()
-        banner.attack("Bettercap")
-        github = github_getting_text(
-            "https://github.com/bettercap/bettercap", 'p[dir="auto"]', 3)
-        banner.description(github)
-        ask = tool_options()
-        if ask == "1":
-            print(f"{colors.blue}[+] Download/usage{colors.reset}")
-            github = github_getting_text("https://www.kali.org/tools/bettercap/", 'pre', 1)
-            print(github)
-            print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
-            check_installed("bettercap", '-h')
-            waiting.waiting()
-        elif ask == "2":
-            writeup.writeup({"Better official Docs": "https://www.bettercap.org/usage/", "Sniffing using bettercap in Linux": "https://www.geeksforgeeks.org/sniffing-using-bettercap-in-linux/", "Wireless Penetration Testing: Bettercap": "https://www.hackingarticles.in/wireless-penetration-testing-bettercap/",
-                    "Hack Wi-Fi Networks with Bettercap": "https://null-byte.wonderhowto.com/how-to/hack-wi-fi-networks-with-bettercap-0194422/", "Bettercap Description": "https://en.kali.tools/?p=140", "Bluetooth Low Energy recon using Bettercap": "https://medium.com/@mks_01/bluetooth-low-energy-recon-using-bettercap-a53bb1b46e93"}, "Bettercap Writeups")
-        else:
-            return
-
-
 def tool_options():
     print(f"{colors.options}1) TOOL(about,installation)")
     print("2) Write ups")
