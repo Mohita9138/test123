@@ -148,7 +148,7 @@ try:
             banner.description("The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.\nIt is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing as well as being a useful addition to an experienced pen testers toolbox. https://www.owasp.org/index.php/ZAP")
             ask=tool_writeups()
             if ask=="1":
-                print(f"{colors.blure}[+] Download/usage")
+                print(f"{colors.blue}[+] Download/usage")
                 print(f"\n Preinstalled in Repository")
                 print(f"\n Go to Application section and search for `zap`{colors.reset}")
                 check_installed("zaproxy")
