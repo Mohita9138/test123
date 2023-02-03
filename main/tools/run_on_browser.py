@@ -9,10 +9,7 @@ def main(URL):
         there=there.decode()
         there=there.split("/")
         if "root" in there:
-            # os.system(f"firefox {URL} 2>/dev/null" )
-            proc = subprocess.Popen([f"firefox {URL} 2>/dev/null"], stdout=subprocess.PIPE, shell=True)
-            #there keyfor success output and noththere for error output
-            (there, notthere) = proc.communicate()
+            os.system(f"firefox {URL} 2>/dev/null" )
         else:
             #this is to get desktop enviroment
             proc = subprocess.Popen([f"echo $DESKTOP_SESSION"], stdout=subprocess.PIPE, shell=True)
@@ -25,8 +22,4 @@ def main(URL):
             os.system(f"sudo chown root:root /run/user/{uid[2]}/gdm/Xauthority > /dev/null 2>&1")
             # os.system(f"firefox {URL} 2>/dev/null")
             os.system(f"sudo chown root:root /home/{there[2]}/.Xauthority > /dev/null 2>&1")
-            # os.system(f"firefox {URL} 2>/dev/null")
-            proc = subprocess.Popen([f"firefox {URL} 2>/dev/null"], stdout=subprocess.PIPE, shell=True)
-            #there keyfor success output and noththere for error output
-            (there, notthere) = proc.communicate()
-
+            os.system(f"firefox {URL} 2>/dev/null")
