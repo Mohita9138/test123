@@ -27,8 +27,9 @@ try:
                 print("[+] updating....".title())
                 print(use.decode())
                 print("\u001b[32m[+] Cyberonix is UPDATED To Latest Version")
-                proc = subprocess.Popen([f"cyberonix"], stdout=subprocess.PIPE, shell=True)
+                proc = subprocess.Popen([f"cyberonix 2>/dev/null"], stdout=subprocess.PIPE, shell=True)
                 (there, notthere) = proc.communicate()
+                print(f"..{there}..")
                 if "not found" in there.decode():
                     os.system("python3 cyberonix.py")
                 exit()
