@@ -7,7 +7,7 @@ def main():
     ██         ██    ██   ██ ██      ██   ██ ██    ██ ██  ██ ██ ██  ██ ██  
      ██████    ██    ██████  ███████ ██   ██  ██████  ██   ████ ██ ██   ██ 
                                                                            v1.0
-    \033[38;5;81mBy Team Metaxone Solution And Technical Navigator
+            \033[38;5;81mBy Team Metaxone Solution And Technical Navigator
 
     ''')
     print("\u001b[37m--------------------------------------------------------------------------------")
