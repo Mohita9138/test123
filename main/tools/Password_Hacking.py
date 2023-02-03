@@ -239,9 +239,6 @@ def main():
                 elif ask == "5":
                     Gophish()
                     pass
-                elif ask == "6":
-                    Smikta()
-                    pass
                 else:
                     break
 
@@ -332,7 +329,7 @@ def Phishing_Attacks_Tools():
     banner.main()
     banner.attack("Phishing Attacks Tools")
     list_root_attacks = ["Social-Engineer Toolkit (SET)", "HiddenEye", "r3bu5", "zphisher", "Shellphish",
-                         "Gophish (GUI)", "Smikta (Website)", "go back"]
+                         "Gophish (GUI)", "go back"]
     for i in range(len(list_root_attacks)):
         print(f"{colors.options}{i}) {list_root_attacks[i]}")
     pass
@@ -1051,30 +1048,6 @@ def Gophish():
                     "Shellphish Tool writeup.writeup": "https://www.kalilinux.in/2019/04/shellphish-phishing-page-creator.html"
                 }
                 , "Gophish writeup.writeup")
-        else:
-            return
-        waiting.waiting()
-    pass
-
-
-def Smikta():
-    while True:
-        clear()
-        banner.main()
-        banner.attack("Smikta")
-        banner.description("The website offers a variety of pre-made phishing pages for popular websites such as"
-                           "Facebook, Gmail, and Instagram, which can be used to steal login credentials. It also"
-                           "provides tutorials on how to use these pages and other hacking techniques.")
-        ask = first_list()
-        if ask == "1":
-            run_on_browser.main("https://smikta.info/")
-            pass
-        elif ask == "2":
-            # first argument for dictionary(key=title,value=url) second argument for banner
-            writeup.writeup(
-                {
-                    "Smikta Tutorial": "https://www.youtube.com/watch?v=lf9RrTcGwFU"}
-                , "Smikta writeup.writeup")
         else:
             return
         waiting.waiting()

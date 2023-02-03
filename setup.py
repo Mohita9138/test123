@@ -8,6 +8,8 @@ def main():
     banner.main()
     banner.attack("Setup")
     os.system("pip install -r requirements.txt")
+    os.system("apt install golang -y")
+    os.system("go env -w GO111MODULE=on")
     create_symlink()
 def create_symlink():
     proc = subprocess.Popen([f"pwd"], stdout=subprocess.PIPE, shell=True)
