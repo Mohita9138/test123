@@ -32,7 +32,7 @@ try:
                 print(f"..{there}...")
                 if "" in there.decode():
                     os.system("python3 cyberonix.py")
-                exit()
+                    exit()
             else:
                 print("[-] Something went wrong....".title())
                 print(use.decode())
