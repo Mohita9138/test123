@@ -1032,13 +1032,13 @@ def Gophish():
                 # install Gophish
                 if  os.path.isdir("gophish"):
                     print(f"{colors.green}[+] installed \n[+] it is installed in your kali{colors.reset}")
-                    os.system("cd gophish && chmod +x gophish && ./gophish")
+                    os.system("cd gophish && chmod +x gophish && ./gophish &")
                     run_on_browser.main("https://127.0.0.1:3333/")
 
                 else:
                     print(f"{colors.blue}[+] Downloading.......{colors.reset}")
                     time.sleep(2)
-                    os.system("mkdir gophish && cd gophish && wget https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit.zip && unzip gophish-v0.12.1-linux-64bit.zip > /dev/null 2>&1 && chmod +x gophish && ./gophish && cd ..")
+                    os.system("mkdir gophish && cd gophish && wget https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit.zip && unzip gophish-v0.12.1-linux-64bit.zip > /dev/null 2>&1 && chmod +x gophish && ./gophish &")
                     run_on_browser.main("https://127.0.0.1:3333/")
 
             else:
