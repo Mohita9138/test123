@@ -17,18 +17,18 @@ def check_installed(name, needargs=False):
         print(notthere)
     else:
         if "install ok installed" not in there.decode():
-            print(f"{colors.red}[-] not installed")
-            print(f"[+] it is not installed in your Kali{colors.reset}")
-            download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
+            print(f"{colors.red}[-] Not Installed")
+            print(f"[+] It Is Not Installed In Your Kali{colors.reset}")
+            download = input(f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset}")
             if download.lower() == "y":
                 os.system(f"apt install {name} -y")
                 if needargs:
-                    download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                     if download.lower() == "y":
                         # when tool is of cli no need of thread
                         thread_run(name, needargs)
                 else:
-                    download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                     if download.lower() == "y":
                         # when tool is of gui it needs thread
                         threading.Thread(target=thread_run, args=(name,)).start()
@@ -36,12 +36,12 @@ def check_installed(name, needargs=False):
             print(f"{colors.green}[+] Installed")
             print(f"[+] It is installed in your kali{colors.reset}")
             if needargs:
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                 if download.lower() == "y":
                     # when tool is of cli no need of thread
                     thread_run(name, needargs)
             else:
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                 if download.lower() == "y":
                     # when tool is of gui it needs thread
                     threading.Thread(target=thread_run, args=(name,)).start()
@@ -75,8 +75,7 @@ def github_getting_text(link, selector, indexvalue):
         # check index value from test file
         return paras[indexvalue].text
     except Exception as e:
-        print(e)
-        return "Not loaded because no internet connection"
+        return "{colors.red}NotLloaded Because No Internet Connection{colors.reset}"
 
 
 def main():
@@ -87,9 +86,8 @@ def main():
         list_attacks = ["Kismet", "Wifite", "Fern Wifi Cracker",
                         "Aircrack-ng", "Fluxion", "Wifiphisher", "Bettercap", "go back"]
         for i in range(len(list_attacks)):
-            print(f"{colors.options}{i}) {list_attacks[i]}{colors.reset}")
-
-        option = input(f"\n{colors.select} Select an option -> {colors.reset} ")
+                print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
+        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
         if option == "0":
             print("\n[+] Kismet")
             os.system("clear")
@@ -133,7 +131,7 @@ def Kismet():
         ask = tool_options()
         if ask == "1":
 
-            print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
+            print(f"{colors.blue}\nPreinstalled In Repository{colors.reset}")
             check_installed("kismet")
             waiting.waiting()
         elif ask == "2":
@@ -151,10 +149,10 @@ def Wifite():
         banner.description(" > Wifite is a tool to audit WEP or WPA encrypted wireless networks. It uses aircrack-ng, pyrit, reaver, tshark tools to perform the audit.\n > This tool is customizable to be automated with only a few arguments and can be trusted to run without supervision.")
         ask = tool_options()
         if ask == "1":
-            print(f"{colors.blue}[+] Download/usage{colors.reset}")
+            print(f"{colors.blue}[+] Download/Usage{colors.reset}")
             github = github_getting_text("https://www.kali.org/tools/wifite/", 'pre', 1)
             print(github)
-            print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
+            print(f"{colors.blue}\nPreinstalled In Repository{colors.reset}")
             check_installed("wifite", "-h")
             waiting.waiting()
         elif ask == "2":
@@ -174,10 +172,10 @@ def Fern_wifi():
         
         ask = tool_options()
         if ask == "1":
-            # print("[+] Download/usage")
+            # print("[+] Download/Usage")
             # github = github_getting_text("https://github.com/savio-code/fern-wifi-cracker", 'selector', index)
             # print(github)
-            print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
+            print(f"{colors.blue}\nPreinstalled In Repository{colors.reset}")
             check_installed("fern-wifi-cracker")
             waiting.waiting()
         elif ask == "2":
@@ -201,8 +199,8 @@ Cracking: WEP and WPA PSK (WPA 1 and 2).
 All tools are command line which allows for heavy scripting. A lot of GUIs have taken advantage of this feature. It works primarily on Linux but also Windows, macOS, FreeBSD, OpenBSD, NetBSD, as well as Solaris and even eComStation 2.''')
         ask = tool_options()
         if ask == "1":
-            print(f"{colors.blue}[+] Download/usage{colors.reset}")
-            print(f"{colors.blue}Preinstalled in Repository{colors.reset}")
+            print(f"{colors.blue}[+] Download/Usage{colors.reset}")
+            print(f"{colors.blue}Preinstalled In Repository{colors.reset}")
             check_installed("aircrack-ng", True)
             waiting.waiting()
         elif ask == "2":
@@ -221,23 +219,23 @@ def Fluxion():
         banner.description(github)
         ask = tool_options()
         if ask == "1":
-            print(f"{colors.blue}Checking Fluxion is installed or not......{colors.reset}")
+            print(f"{colors.blue}Checking Fluxion Is Installed Or Not......{colors.reset}")
             if not os.path.isdir("fluxion"):
-                print(f"{colors.red}[-] Fluxion is not installed{colors.reset}")
-                download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
+                print(f"{colors.red}[-] Fluxion Is Not Installed{colors.reset}")
+                download = input(f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset}")
                 if download[0].lower() == "y":
                     print(f"{colors.blue}[+] Installing ......{colors.reset}")
                     os.system(
                         "git clone https://www.github.com/FluxionNetwork/fluxion.git")
                     print(
-                        f"{colors.blue}\nFluxion is installed at ' {os.getcwd()} ' path\n{colors.reset}")
-                    use = input(f"{colors.blue}[+] Do you want to start Fluxion? (y/n):{colors.reset}")
+                        f"{colors.blue}\nFluxion Is Installed At ' {os.getcwd()} ' Path\n{colors.reset}")
+                    use = input(f"{colors.blue}[+] Do You Want To Start Fluxion? (y/n):{colors.reset}")
                     if use[0].lower() == "y":
                         os.system(
                             "cd fluxion && chmod +x fluxion.sh && ./fluxion.sh")
             else:
-                print(f"{colors.blue}[+] Fluxion is already Installed !!{colors.reset}")
-                use = input(f"{colors.blue}[+] Do you want to start Fluxion? (y/n):{colors.reset}")
+                print(f"{colors.blue}[+] Fluxion Is Already Installed !!{colors.reset}")
+                use = input(f"{colors.blue}[+] Do You Want To Start Fluxion? (y/n):{colors.reset}")
                 if use[0].lower() == "y":
                     os.system(
                         "cd fluxion && chmod +x fluxion.sh && ./fluxion.sh")
@@ -259,12 +257,12 @@ def Wifiphisher():
         banner.description(github)
         ask = tool_options()
         if ask == "1":
-            print("[+] Download/usage")
+            print("[+] Download/Usage")
             github = github_getting_text("https://github.com/wifiphisher/wifiphisher", 'p[dir="auto"]', 25)
             print(github)
             github = github_getting_text("https://github.com/wifiphisher/wifiphisher", 'p[dir="auto"]', 26)
             print(github)
-            print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
+            print(f"{colors.blue}\nPreinstalled In Repository{colors.reset}")
             check_installed("wifiphisher", '-h')
             waiting.waiting()
         elif ask == "2":
@@ -274,10 +272,10 @@ def Wifiphisher():
             return
 
 def tool_options():
-    print(f"{colors.options}1) TOOL(about,installation)")
-    print("2) Write ups")
-    print("3) go back..")
-    ask=input(f"{colors.select}Select an option ->{colors.reset}  ")
+    print(f"{colors.options}1) TOOL(About,Installation)")
+    print(f"2) Write Ups")
+    print(f"3) Go Back..")
+    ask=input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return ask
 
 if __name__ == "__main__":

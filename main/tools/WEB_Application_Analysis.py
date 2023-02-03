@@ -10,31 +10,31 @@ try:
         #there keyfor success output and noththere for error output
         (there, notthere) = proc.communicate()
         if "install ok installed" not in there.decode():
-                    print(f"{colors.red}[-] not installed{colors.reset}")
-                    print(f"{colors.red}[+] it is not installed in your Kali")
-                    download=input(f"[+] Do you want to install it?(y/n):{colors.reset}")
+                    print(f"{colors.red}[-] Not Installed{colors.reset}")
+                    print(f"{colors.red}[+] It Is Not Installed In Your Kali")
+                    download=input(f"[+] Do You Want To Install It?(y/n):{colors.reset}")
                     if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                         os.system(f"apt install {name} -y")
                         if needargs:
-                            download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                            download=input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                             if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                                 #when tool is of cli no need of thread
                                 thread_run(name,needargs)
                         else:
-                            download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                            download=input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                             if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                                 #when tool is of gui it needs thread
                                 threading.Thread(target=thread_run, args=(name,)).start()
         else:
             print(f"{colors.green}[+] Installed")
-            print(f"[+] it is installed in your kali{colors.reset}")
+            print(f"[+] It Is Installed In Your Kali{colors.reset}")
             if needargs:
-                    download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    download=input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                     if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                         #when tool is of cli no need of thread
                         thread_run(name,needargs)
             else:
-                    download=input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    download=input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                     if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                         #when tool is of gui it needs thread
                         threading.Thread(target=thread_run, args=(name,)).start()
@@ -59,7 +59,7 @@ try:
             #check index value from test file
             return paras[indexvalue].text
         except:
-            return "{colors.red}Not loaded because no internet connection{colors.reset}"
+            return "{colors.red}NotLloaded Because No Internet Connection{colors.reset}"
 
     def main():
         while True:
@@ -68,9 +68,8 @@ try:
             banner.attack("WEB Application Analysis")
             list_attacks=["Burp Suite","Owasp ZAP","Nikto","Wapiti","Nessus","dirb","skipfish","Nuclei","go back"]
             for i in range(len(list_attacks)):
-                print(f"{colors.options}{i}) {list_attacks[i]}{colors.reset}")
-
-            option = input(f"\n{colors.select} Select an option -> {colors.reset} ")
+                print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
+            option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
             if option=="0":
                 print(f"\n[+] Burp Suite")
                 os.system("clear")
@@ -113,19 +112,19 @@ try:
             banner.description("Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initialmapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities. Burp gives you full control, letting you combine advanced manual techniques with state-of-the-art automation, to make your work faster, more effective, and more fun.")
             ask=tool_writeups()
             if ask=="1":
-                    professional=input(f"{colors.blue}[+] Do you want it's professional version?(Y/N){colors.reset}")
+                    professional=input(f"{colors.blue}[+] Do You Want It's Professional Version?(Y/N){colors.reset}")
                     if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
                         #clone repo
                         path = 'Burp-Suite'
                         isExist = os.path.exists(path)
                         if isExist:
-                            print(f"{colors.green}[+] It is inatalled{colors.reset}")
-                            professional=input(f"{colors.blue}[+] Do you want Run it?(Y/N){colors.reset}")
+                            print(f"{colors.green}[+] It Is Installed{colors.reset}")
+                            professional=input(f"{colors.blue}[+] Do You Want Run It?(Y/N){colors.reset}")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
                                 os.system("burp > /dev/null 2>&1")
                         else:
                             os.system("git clone https://github.com/hardikhacker/Burp-Suite")
-                            professional=input(f"{colors.blue}[+] Do you want Run it?(Y/N){colors.reset}")
+                            professional=input(f"{colors.blue}[+] Do You Want Run It?(Y/N){colors.reset}")
                             if professional=="y" or professional=="Y" or professional=="Yes" or professional=="yes":
                                 os.system("cd Burp-Suite && chmod +x * && ./Kali_Linux_Setup.sh > /dev/null 2>&1")
                     else:
@@ -147,9 +146,9 @@ try:
             banner.description("The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.\nIt is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing as well as being a useful addition to an experienced pen testers toolbox. https://www.owasp.org/index.php/ZAP")
             ask=tool_writeups()
             if ask=="1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\n Preinstalled in Repository")
-                print(f"\n Go to Application section and search for `zap`{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\n Preinstalled In Repository")
+                print(f"\n Go to Application Section And Search For `zap`{colors.reset}")
                 check_installed("zaproxy")
                 waiting.waiting()
             elif ask=="2":
@@ -167,7 +166,7 @@ try:
             
             ask=tool_writeups()
             if ask=="1":
-                print(f"{colors.blue}[+] Download/usage")
+                print(f"{colors.blue}[+] Download/Usage")
                 github=github_getting_text("https://github.com/sullo/nikto",'pre[class="notranslate"]',1)
                 print(github)
                 print(f"\n Preinstalled in Repository{colors.reset}")
@@ -187,7 +186,7 @@ try:
             
             ask=tool_writeups()
             if ask=="1":
-                print(f"{colors.blue}[+] Download/usage")
+                print(f"{colors.blue}[+] Download/Usage")
                 print(f"\n Preinstalled in Repository{colors.reset}")
                 check_installed("wapiti",True)
                 waiting.waiting()
@@ -204,33 +203,33 @@ try:
             banner.description(github)
             ask=tool_writeups()
             if ask=="1":
-                print(f"\n {colors.blue}Only config availabe in Repository")
-                print(f"Checking if nessus available in you kali or not .......{colors.reset}")
+                print(f"\n {colors.blue}Only config Availabe In Repository")
+                print(f"Checking If nessus Available In You Kali Or Not .......{colors.reset}")
                 proc = subprocess.Popen([f"dpkg -s Nessus"], stdout=subprocess.PIPE, shell=True)
                 (there, notthere) = proc.communicate()
                 if "install ok installed" not in there.decode():
-                            print(f"{colors.red}[-] not installed")
-                            print(f"[+] it is not installed in your Kali{colors.reset}")
-                            download=input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
+                            print(f"{colors.red}[-] Not Installed")
+                            print(f"[+] It Is Not Installed In Your Kali{colors.reset}")
+                            download=input(f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset}")
                             if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                                 os.system("curl --request GET --url 'https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.4.2-debian9_amd64.deb' --output 'Nessus-10.4.2-debian9_amd64.deb'")
                                 os.system(f"dpkg -i Nessus-10.4.2-debian9_amd64.deb")
-                                use=input(f"{colors.blue}[+] Do you want to start it's services?(y/n):{colors.reset}")
+                                use=input(f"{colors.blue}[+] Do You Want To Start It's Services?(y/n):{colors.reset}")
                                 if use=="y" or use=="Y" or use=="Yes" or use=="yes":
                                     os.system("systemctl start nessusd.service")
-                                    print(f"{colors.green}[+] Service started....")
+                                    print(f"{colors.green}[+] Service Started....")
                                     print(f"{colors.blue}[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO{colors.reset}")
-                                    use=input(f"{colors.blue}[+] Do you want to configure Nessus?(y/n):{colors.reset}")
+                                    use=input(f"{colors.blue}[+] Do You Want To Configure Nessus?(y/n):{colors.reset}")
                                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
                                         threading.Thread(target=run_on_browser.main, args=("https://localhost:8834/",)).start()
                 else:
-                    print(f"{colors.green}[+] It is installed in you pc......{colors.reset}")
-                    use=input(f"{colors.blue}[+] Do you want to start it's services?(y/n):{colors.reset}")
+                    print(f"{colors.green}[+] It Is installed In You Kali......{colors.reset}")
+                    use=input(f"{colors.blue}[+] Do You Want To Start It's Services?(y/n):{colors.reset}")
                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
                                     os.system("systemctl start nessusd.service")
-                                    print(f"{colors.green}[+] Service started....{colors.reset}")
+                                    print(f"{colors.green}[+] Service Started....{colors.reset}")
                                     print(f"{colors.blue}[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO{colors.reset}")
-                                    use=input(f"{colors.blue}[+] Do you want to configure Nessus?(y/n):{colors.reset}")
+                                    use=input(f"{colors.blue}[+] Do You Want To Configure Nessus?(y/n):{colors.reset}")
                                     if use=="y" or use=="Y" or use=="Yes" or use=="yes":
                                         threading.Thread(target=run_on_browser.main, args=("https://kali:8834/",)).start()
                 waiting.waiting()
@@ -249,10 +248,10 @@ try:
             banner.description("DIRB IS a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary basesd attack against a web server and analizing the response")
             ask=tool_writeups()
             if ask=="1":
-                print(f"{colors.blue}[+] Download/usage")
+                print(f"{colors.blue}[+] Download/Usage")
                 github=github_getting_text("https://www.kali.org/tools/dirb/#tool-documentation",'pre',0)
                 print(github)
-                print(f"\n Preinstalled in Repository{colors.reset}")
+                print(f"\n Preinstalled In Repository{colors.reset}")
                 check_installed("dirb","no-help")
                 waiting.waiting()
             elif ask=="2":
@@ -268,8 +267,8 @@ try:
             banner.description("Skipfish is an active web application security reconnaissance tool. It prepares an interactive sitemap for the targeted site by carrying out a recursive crawl and dictionary-based probes. The resulting map is then annotated with the output from a number of active (but hopefully non-disruptive) security checks. The final report generated by the tool is meant to serve as a foundation for professional web application security assessments.")
             ask=tool_writeups()
             if ask=="1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\n Preinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\n Preinstalled In Repository{colors.reset}")
                 check_installed("skipfish",True)
                 waiting.waiting()
             elif ask=="2":
@@ -285,8 +284,8 @@ try:
             banner.description(github)
             ask=tool_writeups()
             if ask=="1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\n Preinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\n Preinstalled In Repository{colors.reset}")
                 check_installed("skipfish",True)
                 waiting.waiting()
             elif ask=="2":
@@ -294,10 +293,10 @@ try:
             else:
                 return
     def tool_writeups():
-        print(f"{colors.options}1) TOOL(about,installation)")
-        print(f"2) Write ups")
-        print(f"3) go back..")
-        ask=input(f"{colors.select}Select an option ->{colors.reset}  ")
+        print(f"{colors.options}1) TOOL(About,Installation)")
+        print(f"2) Write Ups")
+        print(f"3) Go Back..")
+        ask=input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
         return ask
 except:
     print(f"thanks ...")

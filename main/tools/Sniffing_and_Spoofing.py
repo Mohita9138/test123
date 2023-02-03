@@ -11,32 +11,32 @@ def check_installed(name,needargs=False):
     #there keyfor success output and noththere for error output
     (there, notthere) = proc.communicate()
     if "install ok installed" not in there.decode():
-                print(f"{colors.red}[-] not installed")
-                print(f"[+] it is not installed in your Kali{colors.reset}")
-                download=input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
+                print(f"{colors.red}[-] Not Installed")
+                print(f"[+] It Is Not Installed In Your Kali{colors.reset}")
+                download=input(f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset}")
                 if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                     os.system(f"apt install {name} -y")
                     if needargs:
-                        download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset}")
+                        download=input(f"{colors.green}Do You Want To Run The Tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of cli no need of thread
                             thread_run(name,needargs)
                     else:
-                        download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset}")
+                        download=input(f"{colors.green}Do You Want To Run The Tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
                             
                             os.system(f"{name}")
     else:
                 print(f"{colors.green}[+] Installed")
-                print(f"[+] it is installed in your kali{colors.reset}")
+                print(f"[+] It Is Installed In Your Kali{colors.reset}")
                 if needargs:
-                        download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset}")
+                        download=input(f"{colors.green}Do You Want To Run The Tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of cli no need of thread
                             thread_run(name,needargs)
                 else:
-                        download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset}")
+                        download=input(f"{colors.green}Do You Want To Run The Tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
                             
@@ -70,9 +70,8 @@ def main():
         banner.attack("Sniffing & Spoofing")
         list_attacks=[" Wireshark"," Bettercap"," Tcpdump"," Arpspoof"," Dsniff"," Scapy"," Netsniff-ng"," Macchanger"," Responder"," Airgeddon","Sharesniffer","Wifi-Pumpkin-3","go back"]
         for i in range(len(list_attacks)):
-            print(f"{colors.options}{i}) {list_attacks[i]}{colors.reset}")
-
-        option = input(f"\n{colors.select} Select an option -> {colors.reset} ")
+                print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
+        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
         if option=="0":
             print("\n[+] Wireshark")
             os.system("clear")
@@ -134,8 +133,7 @@ def Wireshark():
             ask_install=input(f"{colors.blue}[+] Do you want to install Wireshark or not?(y/n):{colors.reset}")
             if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 check_installed("wireshark")
-            else:
-                pass
+            
         elif ask=="2":
             #first argument for dictionary(key=title,value=url) second argument for banner 
             writeup.writeup({"Wireshark Cheat-Sheet":"https://www.comparitech.com/net-admin/wireshark-cheat-sheet","What-is-Wireshark-and-How-to-Use-it":"https://www.comptia.org/content/articles/what-is-wireshark-and-how-to-use-it ","Video Resource Wireshark":"https://www.youtube.com/playlist?list=PLBf0hzazHTGPgyxeEj_9LBHiqjtNEjsgt"},"Wireshark writeup.writeup")
@@ -155,8 +153,7 @@ def Bettercap():
             if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 check_installed("bettercap")
                 waiting.waiting()
-            else:
-                pass
+            
         elif ask=="2":
             writeup.writeup({"Man in the Middle": "https://www.cybervie.com/blog/easy-and-better-man-in-the-middle-using-bettercap/", "MITM Labs Write-up": "https://charlesreid1.com/wiki/MITM_Labs/Bettercap_Over_Wifi", "NTLM Capturing": "https://blog.xpnsec.com/bettercap-capturing-ntlm/", "DNS Spoofing": "https://psychovik.medium.com/dns-spoofing-using-bettercap-24a8435f7a03"},"Bettercap writeup.writeup")
         else:
@@ -178,8 +175,7 @@ def Tcpdump():
             if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 check_installed("tcpdump")
                 waiting.waiting()
-            else:
-                pass
+            
         elif ask=="2":
             writeup.writeup({"TCPDump": "https://www.qnx.com/developers/docs/7.0.0/index.html#com.qnx.doc.neutrino.utilities/topic/t/tcpdump.html","Deep Packet Analysis": "https://thwack.solarwinds.com/resources/b/geek-speak/posts/deep-packet-analysis---practical-applications-with-tcpdump","TCPDump F5": "https://support.f5.com/csp/article/K2289","TCPDump FreeBSD": "https://www.freebsd.org/cgi/man.cgi?tcpdump(1)"},"Tcp-Dump writeup.writeup")
         else:
@@ -199,12 +195,12 @@ def Arpspoof():
                 #there keyfor success output and noththere for error output
                 (there, notthere) = proc.communicate()
                 if "install ok installed" not in there.decode():
-                    print(f"{colors.green}[-] not installed")
-                    print("[+] it is not installed in your Kali{colors.reset}")
-                    download=input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
+                    print(f"{colors.green}[-] Not Installed")
+                    print("[+] It Is Not Installed In Your Kali{colors.reset}")
+                    download=input(f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset}")
                     if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                         os.system(f"apt install dsniff -y")
-                        download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset}")
+                        download=input(f"{colors.green}Do You Want To Run The Tool?(y/n):{colors.reset}")
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of cli no need of thread
                             
@@ -214,8 +210,8 @@ def Arpspoof():
                             pass
                 else:
                     print(f"{colors.green}[+] Installed")
-                    print(f"[+] it is installed in your kali{colors.reset}")
-                    download=input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset} ")
+                    print(f"[+] It Is Installed In Your Kali{colors.reset}")
+                    download=input(f"{colors.green}Do You Want To Run The Tool?(y/n):{colors.reset} ")
                     if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                         #when tool is of cli no need of thread
                         
@@ -223,8 +219,7 @@ def Arpspoof():
                         waiting.waiting()
                     else:
                         pass
-            else:
-                pass
+            
         elif ask=="2":
             writeup.writeup({"Arp_Spoofing_Using_Man_In_The_Middle_Attack":"https://linuxhint.com/arp_spoofing_using_man_in_the_middle_attack/","ArpSpoof Video Resource":"https://www.youtube.com/watch?v=8SIP36Fym7U"},"ArpSpoof writeup.writeup")
         else:
@@ -237,12 +232,8 @@ def Dsniff():
         banner.description("\ndsniff is a collection of tools for network auditing and penetration testing. dsniff, filesnarf, mailsnarf, msgsnarf, urlsnarf, and webspy passively monitor a network for interesting data (passwords, e-mail, files, etc.). arpspoof, dnsspoof, and macof facilitate the interception of network traffic normally unavailable to an attacker (e.g, due to layer-2 switching). sshmitm and webmitm implement active monkey-in-the-middle attacks against redirected SSH and HTTPS sessions by exploiting weak bindings in ad-hoc PKI.\n")
         ask=tool_writeups()
         if ask=="1":
-            ask_install=input(f"{colors.blue}[+] Do you want to install Dsniff or not?(y/n):{colors.reset}")
-            if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 check_installed("dsniff")
                 waiting.waiting()
-            else:
-                pass
         elif ask=="2":
             writeup.writeup({"Dsniff Repo": "https://github.com/tecknicaltom/dsniff","Manpages Dsniff": "https://kaisenlinux.org/manpages/dsniff.html","Introduction": "http://www.ouah.org/dsniffintr.htm"},"Dsniff writeup.writeup")
         else:
@@ -257,18 +248,17 @@ def Scapy():
         banner.description(github_text_0)
         ask=tool_writeups()
         if ask=="1":
-            ask_install=input(f"{colors.blue}[+] Do you want to Download & Execute Scapy or not?(y/n):{colors.reset}")
-            if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 if not os.path.isdir("scapy"):
-                    print(f"{colors.blue}Downloading ...  Please Wait !!{colors.reset}")
-                    os.system("git clone https://github.com/secdev/scapy.git")
-                    
-                    os.system("cd scapy && chmod u+x * && ./run_scapy")
-                    waiting.waiting()
+                    ask_install=input(f"{colors.blue}[+] Do you want to Download & Execute Scapy or not?(y/n):{colors.reset}")
+                    if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
+                        print(f"{colors.blue}Downloading ...  Please Wait !!{colors.reset}")
+                        os.system("git clone https://github.com/secdev/scapy.git")
+                        os.system("cd scapy && chmod u+x * && ./run_scapy")
+                        waiting.waiting()
                 else:
                     print(f"{colors.green}[+] Installed")
                     print(f"[+] it is Already Installed{colors.reset}")
-                    download = input(f"{colors.green}Do you want to run the tool?(y/n):{colors.reset} ")
+                    download = input(f"{colors.green}Do You Want To Run The Tool?(y/n):{colors.reset} ")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         
                         os.system("cd scapy && chmod u+x * && ./run_scapy")
@@ -293,12 +283,8 @@ def Netsniff():
         banner.description(merged_text)
         ask=tool_writeups()
         if ask=="1":
-            ask_install=input(f"{colors.blue}[+] Do you want to install Netsniff-ng or not?(y/n):{colors.reset}")
-            if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 check_installed("netsniff-ng")
                 waiting.waiting()
-            else:
-                pass
         elif ask=="2":
             writeup.writeup({"Netsniff-ng Website": "http://netsniff-ng.org/", "Sniffing Network Traffic": "https://medium.com/purple-team/sniffing-network-traffic-with-netsniff-ng-55b8f5d436c2", "Manual": "https://linux.die.net/man/8/netsniff-ng", "Video Resources": "https://www.irongeek.com/i.php?page=videos/hack3rcon4/09-netsniff-ng-jon-schipp"},"Netsniff-ng writeup.writeup")
         else:
@@ -313,12 +299,9 @@ def Macchanger():
         banner.description(github_text_0)
         ask=tool_writeups()
         if ask=="1":
-            ask_install=input(f"{colors.blue}[+] Do you want to install Mac changer or not?(y/n):{colors.reset}")
-            if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 check_installed("macchanger")
                 waiting.waiting()
-            else:
-                pass
+            
         elif ask=="2":
             #first argument for dictionary(key=title,value=url) second argument for banner 
             writeup.writeup({"How to Change Mac Address": "https://linuxconfig.org/how-to-change-mac-address-using-macchanger-on-kali-linux/", "Macchanger on Kali Linux": "https://kennyvn.com/change-mac-address-macchanger-kali-linux/", "Permanently Change Mac Address": "https://www.linuxuprising.com/2018/05/how-to-permanently-change-mac-address.html"},"Mac-changer writeup.writeup")
@@ -336,12 +319,8 @@ def Responder():
         banner.description(merged_text)
         ask=tool_writeups()
         if ask=="1":
-            ask_install=input(f"{colors.blue}[+] Do you want to install Responder or not?(y/n):{colors.reset}")
-            if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 check_installed("responder")
                 waiting.waiting()
-            else:
-                pass
         elif ask=="2":
             #first argument for dictionary(key=title,value=url) second argument for banner 
             writeup.writeup({"Responder-Guide": "https://www.ivoidwarranties.tech/posts/pentesting-tuts/responder/guide/","How-To-Use-Responder-to-Capture-NETNTLM-and-Grab-a-Shell": "https://www.a2secure.com/blog-en/how-to-use-responder-to-capture-netntlm-and-grab-a-shell/","infinitelogins.com-Responder": "https://infinitelogins.com/tag/responder/","Capture-Window-10-NTLM-Hashes-Responder": "https://secnhack.in/capture-window-10-ntlm-hashes-responder"},"Responder writeup.writeup")
@@ -360,8 +339,7 @@ def Airgeddon():
             if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 check_installed("airgeddon")
                 waiting.waiting()
-            else:
-                pass
+            
         elif ask=="2":
             #first argument for dictionary(key=title,value=url) second argument for banner 
             writeup.writeup({"How to Use Airgeddon in Kali Linux":"https://www.systranbox.com/how-to-use-airgeddon-in-kali-linux/", "Airgeddon Wifi Crack in Kali Linux":"https://www.kalilinux.in/2021/03/airgeddon-wifi-crack-kalilinux.html", "Airgeddon Multi-Use Bash Script to Audit Wireless Networks":"https://xploitlab.com/airgeddon-multi-use-bash-script-to-audit-wireless-networks/", "Airgeddon Tool Installation and Fix All Errors":"https://www.hacknos.com/airgeddon-tool-installation-and-fix-all-errors/"},"Airgeddon writeup.writeup")
@@ -377,17 +355,16 @@ def Sharesniffer():
         banner.description(github_text_0)
         ask=tool_writeups()
         if ask=="1":
-            ask_install=input(f"{colors.blue}[+] Do you want to Download & Execute Sharesniffer or not?(y/n):{colors.reset} ")
-            if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 if os.path.isfile("sharesniffer.py"):
                     print(f"{colors.green}[+] Downloaded")
                     print(f"[+] it is Already Installed{colors.reset}")
                     os.system("chmod +x sharesniffer.py && ./sharesniffer.py")
                 else:
-                    os.system("curl -s https://raw.githubusercontent.com/shirosaidev/sharesniffer/master/sharesniffer.py -o sharesniffer.py && chmod +x sharesniffer.py && ./sharesniffer.py")
+                    ask_install=input(f"{colors.blue}[+] Do you want to Download & Execute Sharesniffer or not?(y/n):{colors.reset} ")
+                    if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
+                        os.system("curl -s https://raw.githubusercontent.com/shirosaidev/sharesniffer/master/sharesniffer.py -o sharesniffer.py && chmod +x sharesniffer.py && ./sharesniffer.py")
                 waiting.waiting()
-            else:
-                pass
+            
             
         elif ask=="2":
             writeup.writeup({"Sharesniffer Github-Repo":"github.com/shirosaidev/sharesniffer","Sharesniffer Presentation":"slideplayer.com/slide/6055181/"},"Sharesniffer writeup.writeup")
@@ -402,12 +379,9 @@ def WifiPumpkin():
         banner.description(github_text_0)
         ask=tool_writeups()
         if ask=="1":
-            ask_install=input(f"{colors.blue}[+] Do you want to install Wifi Pumpkin 3 or not?(y/n):{colors.reset}")
-            if ask_install=="y" or ask_install=="Y" or ask_install=="Yes" or ask_install=="yes":
                 check_installed("wifipumpkin3")
                 waiting.waiting()
-            else:
-                pass
+            
         elif ask=="2":
             #first argument for dictionary(key=title,value=url) second argument for banner 
             writeup.writeup({"Wireless Penetration Testing": "https://www.hackingarticles.in/wireless-penetration-testing-wifipumpkin3/", "WiFiPumpkin3 : Powerful Framework For Rogue Access Point Attack": "https://kalilinuxtutorials.com/wifipumpkin3/"},"Wifi-Pumpkin-3 writeup.writeup")
@@ -416,10 +390,10 @@ def WifiPumpkin():
 
         
 def tool_writeups():
-    print(f"{colors.options}1) TOOL(about,installation)")
-    print("2) Write ups")
-    print("3) go back..")
-    ask=input(f"{colors.select}Select an option ->{colors.reset}  ")
+    print(f"{colors.options}1) TOOL(About,Installation)")
+    print(f"2) Write Ups")
+    print(f"3) Go Back..")
+    ask=input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return ask
 
 if __name__ == "__main__": 

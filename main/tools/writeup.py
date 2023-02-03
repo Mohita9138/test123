@@ -5,13 +5,13 @@ def writeup(writeup_dist,name):
     while True:
         os.system("clear")
         banner.main()
-        banner.attack(name)
+        banner.attack(name.title())
         #convert dict keys in list(type casting)
         key=list(writeup_dist.keys())
-        key.append("go back")
-        for i in range(len(key)):
-            print(f"{colors.options}{i}) {key[i]}{colors.reset}")
-        option = input(f"\n {colors.select}Select an option -> {colors.reset} ")
+        key.append("Go Back")
+        for i in range(len(list_attacks)):
+                print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
+        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
         #1-9=int kdsjfhgkjds=int X to type cast safely 
         try:
             threading.Thread(target=run_on_browser.main, args=(writeup_dist[key[int(option)]],)).start()

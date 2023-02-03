@@ -20,31 +20,31 @@ def check_installed(name, needargs=False):
     # there keyfor success output and noththere for error output
     (there, notthere) = proc.communicate()
     if "install ok installed" not in there.decode():
-        print(f"{colors.red}[-] not installed")
-        print(f"{colors.red}[+] it is not installed in your Kali")
+        print(f"{colors.red}[-] Not Installed")
+        print(f"{colors.red}[+] It Is Not Installed In Your Kali")
         download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
         if download == "y" or download == "Y" or download == "Yes" or download == "yes":
             os.system(f"apt install {name} -y")
             if needargs:
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                 if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                     # when tool is of cli no need of thread
                     thread_run(name, needargs)
             else:
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                 if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                     # when tool is of gui it needs thread
                     threading.Thread(target=thread_run, args=(name,)).start()
     else:
-        print(f"{colors.green}[+] installed")
-        print(f"{colors.green}[+] it is installed in your kali")
+        print(f"{colors.green}[+] Installed")
+        print(f"{colors.green}[+] It Is Installed In Your Kali")
         if needargs:
-            download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+            download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
             if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                 # when tool is of cli no need of thread
                 thread_run(name, needargs)
         else:
-            download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+            download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
             if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                 # when tool is of gui it needs thread
                 threading.Thread(target=thread_run, args=(name,)).start()
@@ -62,10 +62,10 @@ def thread_run(command, needargs=False):
 
 
 def first_list():
-    print(f"{colors.options}1) TOOL(about,installation)")
-    print(f"2) Write ups")
-    print(f"3) go back..")
-    option = input(f"{colors.select}Select an option ->{colors.reset}  ")
+    print(f"{colors.options}1) TOOL(About,Installation)")
+    print(f"2) Write Ups")
+    print(f"3) Go Back..")
+    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return option
 
 
@@ -76,9 +76,8 @@ def root():
     list_root_attacks = ["Brute Force Attacks", "Dictionary Attacks", "Rainbow Table Attack", "Wordlist Generator",
                          "Phishing Attacks", "Keylogger Attacks", "go back"]
     for i in range(len(list_root_attacks)):
-        print(f"{colors.options}{i}) {list_root_attacks[i]}{colors.reset}")
-    pass
-    option = input(f"\n{colors.select} Select an option -> {colors.reset} ")
+        print(colors.options,f"{i}) {list_root_attacks[i]}".title(),colors.reset)
+    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return option
 
 
@@ -277,9 +276,8 @@ def Brute_Force_Tools():
     list_root_attacks = ["Hashcat", "John The Ripper", "Hydra", "Johnny (GUI John)",
                          "CrackStation (Website)", "CyberChef (Website)", "go back"]
     for i in range(len(list_root_attacks)):
-        print(f"{colors.options}{i}) {list_root_attacks[i]}")
-    pass
-    option = input(f"{colors.blue}Select an option ->{colors.reset}  ")
+        print(colors.options,f"{i}) {list_root_attacks[i]}".title(),colors.reset)
+    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return option
     pass
 
@@ -291,9 +289,8 @@ def Dictionary_Attack_Tools():
     list_root_attacks = ["Hashcat", "John The Ripper", "Hydra", "Medusa", "Nrack", "Johnny (GUI John)",
                          "CrackStation (Website)", "CyberChef (Website)", "go back"]
     for i in range(len(list_root_attacks)):
-        print(f"{colors.options}{i}) {list_root_attacks[i]}")
-    pass
-    option = input(f"{colors.blue}Select an option ->{colors.reset}  ")
+        print(colors.options,f"{i}) {list_root_attacks[i]}".title(),colors.reset)
+    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return option
     pass
 
@@ -304,9 +301,8 @@ def Rainbow_Table_Tools():
     banner.attack("Rainbow Table Tools")
     list_root_attacks = ["RainbowCrack", "ophCrack", "go back"]
     for i in range(len(list_root_attacks)):
-        print(f"{colors.options}{i}) {list_root_attacks[i]}")
-    pass
-    option = input(f"{colors.blue}Select an option ->{colors.reset}  ")
+        print(colors.options,f"{i}) {list_root_attacks[i]}".title(),colors.reset)
+    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return option
     pass
 
@@ -317,9 +313,8 @@ def Wordlist_Generator_Tools():
     banner.attack("Wordlist Generator Tools")
     list_root_attacks = ["Crunch", "Cupp", "bopscrk", "go back"]
     for i in range(len(list_root_attacks)):
-        print(f"{colors.options}{i}) {list_root_attacks[i]}")
-    pass
-    option = input(f"{colors.blue}Select an option ->{colors.reset}  ")
+        print(colors.options,f"{i}) {list_root_attacks[i]}".title(),colors.reset)
+    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return option
     pass
 
@@ -331,9 +326,8 @@ def Phishing_Attacks_Tools():
     list_root_attacks = ["Social-Engineer Toolkit (SET)", "HiddenEye", "r3bu5", "zphisher", "Shellphish",
                          "Gophish (GUI)", "go back"]
     for i in range(len(list_root_attacks)):
-        print(f"{colors.options}{i}) {list_root_attacks[i]}")
-    pass
-    option = input(f"{colors.blue}Select an option ->{colors.reset}  ")
+        print(colors.options,f"{i}) {list_root_attacks[i]}".title(),colors.reset)
+    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return option
     pass
 
@@ -344,9 +338,8 @@ def Keylogger_Attacks_Tools():
     banner.attack("Keylogger Attack Tools")
     list_root_attacks = ["ZLogger", "go back"]
     for i in range(len(list_root_attacks)):
-        print(f"{colors.options}{i}) {list_root_attacks[i]}")
-    pass
-    option = input(f"{colors.blue}Select an option ->{colors.reset}  ")
+        print(colors.options,f"{i}) {list_root_attacks[i]}".title(),colors.reset)
+    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     return option
     pass
 
@@ -365,8 +358,8 @@ def Hashcat():
                            "It's widely used for password recovery, security testing and penetration testing.")
         ask = first_list()
         if ask == "1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\nPreinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\nPreinstalled In Repository{colors.reset}")
                 check_installed("hashcat", True)
                 waiting.waiting()
         elif ask == "2":
@@ -398,8 +391,8 @@ def John_The_Ripper():
                            "guessable passwords.")
         ask = first_list()
         if ask == "1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\nPreinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\nPreinstalled In Repository{colors.reset}")
                 check_installed("john", True)
                 waiting.waiting()
         elif ask == "2":
@@ -429,8 +422,8 @@ def Hydra():
                            "and penetration testers.")
         ask = first_list()
         if ask == "1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\nPreinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\nPreinstalled In Repository{colors.reset}")
                 check_installed("hydra", True)
                 waiting.waiting()
         elif ask == "2":
@@ -460,8 +453,8 @@ def Johnny():
                            "Linux and MacOS.")
         ask = first_list()
         if ask == "1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\nPreinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\nPreinstalled In Repository{colors.reset}")
                 check_installed("johnny")
                 waiting.waiting()
         elif ask == "2":
@@ -549,8 +542,8 @@ def Medusa():
                            "activities.")
         ask = first_list()
         if ask == "1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\nPreinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\nPreinstalled In Repository{colors.reset}")
                 check_installed("medusa", True)
                 waiting.waiting()
 
@@ -584,8 +577,8 @@ def Ncrack():
                            "applications")
         ask = first_list()
         if ask == "1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\nPreinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\nPreinstalled In Repository{colors.reset}")
                 check_installed("ncrack", True)
                 waiting.waiting()
 
@@ -626,13 +619,13 @@ def RainbowCrack():
                     download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         os.system("sudo apt install rcrack")
-                        download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                        download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                         if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                             # when tool is of gui it needs thread
                             os.system("rcrack")
                 else:
                     print(f"{colors.green}[+] it is installed !!{colors.reset}")
-                    download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         # when tool is of gui it needs thread
                         os.system("rcrack")
@@ -664,8 +657,8 @@ def ophCrack():
                            "CD or USB drive and can be used to recover lost or forgotten Windows passwords.")
         ask = first_list()
         if ask == "1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\nPreinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\nPreinstalled In Repository{colors.reset}")
                 check_installed("ophcrack")
                 waiting.waiting()
 
@@ -697,8 +690,8 @@ def Crunch():
                            "wordlist of any size.")
         ask = first_list()
         if ask == "1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\nPreinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\nPreinstalled In Repository{colors.reset}")
                 check_installed("crunch", True)
                 waiting.waiting()
 
@@ -732,8 +725,8 @@ def Cupp():
                            "and it's open source.")
         ask = first_list()
         if ask == "1":
-                print(f"{colors.blue}[+] Download/usage")
-                print(f"\nPreinstalled in Repository{colors.reset}")
+                print(f"{colors.blue}[+] Download/Usage")
+                print(f"\nPreinstalled In Repository{colors.reset}")
                 check_installed("cupp", True)
                 waiting.waiting()
 
@@ -768,23 +761,23 @@ def bopscrk():
         ask = first_list()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage")
-            ask_install = input(f"{colors.blue}[+] Do you want to install bopscrk or not?(y/n):{colors.reset}")
+            ask_install = input(f"{colors.blue}[+] Do You Want To Install bopscrk Or Not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install bopscrk using pip
                 proc = subprocess.Popen(["which bopscrk"], stdout=subprocess.PIPE, shell=True)
                 (there, notthere) = proc.communicate()
                 if "bopscrk" not in there.decode():
-                    print(f"{colors.red}[-] not installed{colors.reset}")
-                    download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
+                    print(f"{colors.red}[-] Not Installed{colors.reset}")
+                    download = input(f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset}")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         os.system("sudo pip3 install bopscrk")
-                        download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                        download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                         if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                             # when tool is of gui it needs thread
                             os.system("bopscrk -h")
                 else:
-                    print(f"{colors.green}[+] it is installed !!{colors.reset}")
-                    download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    print(f"{colors.green}[+] It Is Installed !!{colors.reset}")
+                    download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         # when tool is of gui it needs thread
                         os.system("bopscrk -h")
@@ -821,22 +814,22 @@ def SET():
         ask = first_list()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage")
-            ask_install = input(f"{colors.blue}[+] Do you want to install setoolkit or not?(y/n):{colors.reset}")
+            ask_install = input(f"{colors.blue}[+] Do You Want To Install Setoolkit Or Not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install bopscrk using pip
                 output = subprocess.check_output("which setoolkit", shell=True)
                 if "setoolkit" not in output.decode():
-                    print(f"{colors.red}[-] not installed{colors.reset}")
-                    download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
+                    print(f"{colors.red}[-] Not Installed{colors.reset}")
+                    download = input(f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset}")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         os.system("sudo apt install set")
-                        download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                        download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                         if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                             # when tool is of gui it needs thread
                             os.system("setoolkit")
                 else:
-                    print(f"{colors.green}[+] it is installed !!")
-                    download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                    print(f"{colors.green}[+] It Is Installed !!")
+                    download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         # when tool is of gui it needs thread
                         os.system("setoolkit")
@@ -867,17 +860,17 @@ def HiddenEye():
                            "attacks.")
         ask = first_list()
         if ask == "1":
-            ask_install = input(f"{colors.blue}[+] Do you want to install Hiddeneye or not?(y/n):{colors.reset}")
+            ask_install = input(f"{colors.blue}[+] Do You Want To Install Hiddeneye Or Not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install HiddenEye
                 if os.path.exists("HiddenEye"):
-                    print(f"{colors.red}[+] Tool is already exits !!{colors.reset}")
+                    print(f"{colors.red}[+] Tool Is Already Exits !!{colors.reset}")
                     pass
                 else:
                     os.system("git clone https://github.com/Morsmalleo/HiddenEye && cd HiddenEye && pip3 "
                               "install -r requirements.txt")
                     pass
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                 if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                     os.system("cd HiddenEye && python HiddenEye.py && cd ..")
             else:
@@ -909,16 +902,16 @@ def r3bu5():
         ask = first_list()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage")
-            ask_install = input(f"{colors.blue}[+] Do you want to install r3bu5 or not?(y/n):{colors.reset}")
+            ask_install = input(f"{colors.blue}[+] Do You Want To Install r3bu5 Or Not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install r3bu5
                 if os.path.exists("r3bu5"):
-                    print(f"{colors.red}[+] Tool is already exits !!{colors.reset}")
+                    print(f"{colors.red}[+] Tool Is Already Exits !!{colors.reset}")
                     pass
                 else:
                     os.system("git clone https://github.com/k46-db0y/r3bu5 && cd r3bu5 && chmod +x r3bu5.sh")
                     pass
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                 if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                     os.system("cd r3bu5 && bash r3bu5.sh  && cd ..")
             else:
@@ -952,16 +945,16 @@ def zphisher():
         ask = first_list()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage")
-            ask_install = input(f"{colors.blue}[+] Do you want to install zphisher or not?(y/n):{colors.reset}")
+            ask_install = input(f"{colors.blue}[+] Do You Want To Install zphisher Or Not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install zphisher
                 if os.path.exists("zphisher"):
-                    print(f"{colors.green}[+] installed \n[+] it is installed in your kali{colors.reset}")
+                    print(f"{colors.green}[+] Installed \n[+] It Is Installed In Your Kali{colors.reset}")
                     pass
                 else:
                     os.system("git clone https://github.com/htr-tech/zphisher && cd zphisher && chmod +x zphisher.sh")
                     pass
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                 if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                     os.system("cd zphisher && ./zphisher.sh && cd ..")
             else:
@@ -994,17 +987,17 @@ def Shellphish():
                            "be used by malicious actors for illegal activities.")
         ask = first_list()
         if ask == "1":
-            ask_install = input(f"{colors.blue}[+] Do you want to install Shellphish or not?(y/n):{colors.reset}")
+            ask_install = input(f"{colors.blue}[+] Do You Want To Install Shellphish Or Not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install Shellphish
                 if os.path.exists("ShellPhish"):
-                    print(f"{colors.red}[+] Tool is already exits !!{colors.reset}")
+                    print(f"{colors.red}[+] Tool Is Already Exits !!{colors.reset}")
                     pass
                 else:
                     os.system("git clone https://github.com/AbirHasan2005/ShellPhish && cd ShellPhish && chmod +x"
                               " shellphish.sh")
                     pass
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                 if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                     os.system("cd ShellPhish && ./shellphish.sh && cd .. ")
             else:
@@ -1038,11 +1031,11 @@ def Gophish():
                            "by malicious actors for illegal activities.")
         ask = first_list()
         if ask == "1":
-            ask_install = input(f"{colors.blue}[+] Do you want to install Gophish or not?(y/n):{colors.reset}")
+            ask_install = input(f"{colors.blue}[+] Do You Want To Install Gophish Or Not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install Gophish
                 if  os.path.isdir("gophish"):
-                    print(f"{colors.green}[+] Installed \n[+] It is installed in your kali{colors.reset}")
+                    print(f"{colors.green}[+] Installed \n[+] It Is Installed In Your Kali{colors.reset}")
                     os.system("cd gophish && chmod +x gophish && ./gophish &")
                     run_on_browser.main("https://127.0.0.1:3333/ 2>/dev/null")
 
@@ -1082,16 +1075,16 @@ def ZLogger():
         ask = first_list()
         if ask == "1":
             print(f"{colors.blue}[+] Download/usage")
-            ask_install = input(f"{colors.blue}[+] Do you want to install ZLogger or not?(y/n):{colors.reset}")
+            ask_install = input(f"{colors.blue}[+] Do You Want To Install ZLogger Or Not?(y/n):{colors.reset}")
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install ZLogger
                 if os.path.exists("ZLogger"):
-                    print(f"{colors.green}[+] Installed \n[+] It is installed in your kali{colors.reset}")
+                    print(f"{colors.green}[+] Installed \n[+] It Is Installed In Your Kali{colors.reset}")
                     pass
                 else:
                     os.system("git clone https://github.com/z00z/ZLogger && cd ZLogger && pip install pynput")
                     pass
-                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                download = input(f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}")
                 if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                     os.system("cd ZLogger && python zlogger.py -h && cd ..")
             else:
