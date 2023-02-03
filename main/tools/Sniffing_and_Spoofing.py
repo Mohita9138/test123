@@ -26,7 +26,7 @@ def check_installed(name,needargs=False):
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
                             
-                            os.system(f"{name} > /dev/null 2>&1")
+                            os.system(f"{name}")
     else:
                 print(f"{colors.green}[+] Installed")
                 print(f"[+] it is installed in your kali{colors.reset}")
@@ -40,7 +40,7 @@ def check_installed(name,needargs=False):
                         if download=="y" or download=="Y" or download=="Yes" or download=="yes":
                             #when tool is of gui it needs thread
                             
-                            os.system(name)
+                            os.system(f"{name} > /dev/null 2>&1")
 def thread_run(command,needargs=False):
     if needargs=="no-help":
         #it will run only help because it is in cli
