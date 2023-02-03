@@ -29,24 +29,24 @@ def check_installed(name, needargs=False):
                 if download[0].lower() == "y":
                     # when tool is of gui it needs thread
                     threading.Thread(target=thread_run, args=(name,)).start()
-    else:
-        print(f"{colors.green}[+] Installed")
-        print(f"[+] It is installed in your kali{colors.reset}")
-        if needargs:
-            download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-            if download[0].lower() == "y":
-                # when tool is of cli no need of thread
-                thread_run(name, needargs)
         else:
-            download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
-            if download[0].lower() == "y":
-                # when tool is of gui it needs thread
-                threading.Thread(target=thread_run, args=(name,)).start()
-                if name == 'kismet':
-                    print(f"[+] {name} is started at address: http://localhost:2501 (or the address of this system) for the Kismet UI")
-                    KURL = "http://localhost:2501" 
-                    threading.Thread(target=run_on_browser.main, args=(KURL,)).start()
-                    # os.system(f"firefox http://localhost:2501 2>/dev/null")
+            print(f"{colors.green}[+] Installed")
+            print(f"[+] It is installed in your kali{colors.reset}")
+            if needargs:
+                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                if download[0].lower() == "y":
+                    # when tool is of cli no need of thread
+                    thread_run(name, needargs)
+            else:
+                download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
+                if download[0].lower() == "y":
+                    # when tool is of gui it needs thread
+                    threading.Thread(target=thread_run, args=(name,)).start()
+                    if name == 'kismet':
+                        print(f"[+] {name} is started at address: http://localhost:2501 (or the address of this system) for the Kismet UI")
+                        KURL = "http://localhost:2501" 
+                        threading.Thread(target=run_on_browser.main, args=(KURL,)).start()
+                        # os.system(f"firefox http://localhost:2501 2>/dev/null")
 
 def thread_run(command, needargs=False):
     
@@ -203,7 +203,7 @@ All tools are command line which allows for heavy scripting. A lot of GUIs have 
             github = github_getting_text("https://www.kali.org/tools/aircrack-ng/", 'pre', 38)
             print(github)
             print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
-            check_installed("aircrack-ng")
+            check_installed("aircrack-ng", "--help")
             waiting.waiting()
         elif ask == "2":
             writeup.writeup({"How to use Aircrack-ng": "https://linuxhint.com/how_to_aircrack_ng/", "Aircrack-ng Practical Demonstration Tutorial": "https://techofide.com/blogs/how-to-use-aircrack-ng-aircrack-ng-tutorial-practical-demonstration/",
