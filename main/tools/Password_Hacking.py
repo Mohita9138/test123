@@ -1031,6 +1031,7 @@ def Gophish():
             if ask_install == "y" or ask_install == "Y" or ask_install == "Yes" or ask_install == "yes":
                 # install Gophish
                 if  os.path.isdir("gophish"):
+                    print(f"{colors.green}[+] installed \n[+] it is installed in your kali{colors.reset}")
                     os.system("cd gophish && chmod +x gophish && ./gophish")
                     run_on_browser.main("https://127.0.0.1:3333/")
 
