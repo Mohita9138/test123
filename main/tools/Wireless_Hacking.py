@@ -45,7 +45,7 @@ def check_installed(name, needargs=False):
                 if name == 'kismet':
                     print(f"[+] {name} is started at address: http://localhost:2501 (or the address of this system) for the Kismet UI")
                     KURL = "http://localhost:2501" 
-                    threading.Thread(target=main.run_on_browser, args=(KURL,)).start()
+                    threading.Thread(target=main.run_on_browser, args=(KURL)).start()
                     # os.system(f"firefox http://localhost:2501 2>/dev/null")
 
 def thread_run(command, needargs=False):
