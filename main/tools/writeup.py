@@ -9,9 +9,9 @@ def writeup(writeup_dist,name):
         #convert dict keys in list(type casting)
         key=list(writeup_dist.keys())
         key.append("Go Back")
-        for i in range(len(list_attacks)):
-                print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
-        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        for i in range(len(key)):
+            print(colors.options,f"{i}) {key[i]}".title(),colors.reset)
+        option = input(f"\n {colors.select}Select An Option -> {colors.reset} ")
         #1-9=int kdsjfhgkjds=int X to type cast safely 
         try:
             threading.Thread(target=run_on_browser.main, args=(writeup_dist[key[int(option)]],)).start()
