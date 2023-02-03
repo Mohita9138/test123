@@ -620,16 +620,16 @@ def RainbowCrack():
                 output = subprocess.check_output("which rcrack", shell=True)
                 if "rcrack" not in output.decode():
                     print(f"{colors.red}[-] not installed{colors.reset}")
-                    download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{color.reset}")
+                    download = input(f"{colors.blue}[+] Do you want to install it?(y/n):{colors.reset}")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         os.system("sudo apt install rcrack")
-                        download = input(f"{colors.blue}Do you want to run the tool?(y/n):{color.reset}")
+                        download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                         if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                             # when tool is of gui it needs thread
                             os.system("rcrack")
                 else:
-                    print(f"{colors.green}[+] it is installed !!{color.reset}")
-                    download = input(f"{colors.blue}Do you want to run the tool?(y/n):{color.reset}")
+                    print(f"{colors.green}[+] it is installed !!{colors.reset}")
+                    download = input(f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}")
                     if download == "y" or download == "Y" or download == "Yes" or download == "yes":
                         # when tool is of gui it needs thread
                         os.system("rcrack")
