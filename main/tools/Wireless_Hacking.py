@@ -151,7 +151,7 @@ def Wifite():
             github = github_getting_text("https://www.kali.org/tools/wifite/", 'pre', 1)
             print(github)
             print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
-            check_installed("wifite", "-h")
+            check_installed("wifite")
         elif ask == "2":
             writeup.writeup({"Wifite walkthrough Part-1": "https://resources.infosecinstitute.com/topic/wifite-walkthrough-part-1/", "Wifite walkthrough Part-2": "https://resources.infosecinstitute.com/topic/wifite-walkthrough-part-2/",
                     "Wireless pentesting with Wifite": "https://www.hackingarticles.in/wireless-penetration-testing-wifite/", "Wifite - Automated Wifi hacking tool": "https://kalitut.com/wifite-automated-wi-fi-hacking-tool/"}, "Wifite writeups")
