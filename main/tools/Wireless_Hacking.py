@@ -203,7 +203,7 @@ All tools are command line which allows for heavy scripting. A lot of GUIs have 
             github = github_getting_text("https://www.kali.org/tools/aircrack-ng/", 'pre', 38)
             print(github)
             print(f"{colors.blue}\nPreinstalled in Repository{colors.reset}")
-            check_installed("aircrack-ng", "--help")
+            check_installed("aircrack-ng")
             waiting.waiting()
         elif ask == "2":
             writeup.writeup({"How to use Aircrack-ng": "https://linuxhint.com/how_to_aircrack_ng/", "Aircrack-ng Practical Demonstration Tutorial": "https://techofide.com/blogs/how-to-use-aircrack-ng-aircrack-ng-tutorial-practical-demonstration/",
