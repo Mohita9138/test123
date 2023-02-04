@@ -4,7 +4,6 @@ import subprocess
 from main.tools import banner
 
 def main():
-    os.system("apt update -y && apt full-upgrade -y")
     os.system("clear")
     banner.main()
     banner.attack("Setup")
