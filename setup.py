@@ -8,7 +8,7 @@ def main():
     banner.main()
     banner.attack("Setup")
     os.system("pip install -r requirements.txt")
-    os.system("apt install golang -y")
+    os.system("sudo apt install golang -y")
     os.system("go env -w GO111MODULE=on")
     create_symlink()
 def create_symlink():
