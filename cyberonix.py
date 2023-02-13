@@ -4,13 +4,12 @@ import subprocess
 from main import *
 from main.tools import banner,colors
 import time
-
-try:
-    def exit_program():
+def exit_program():
         os.system("clear")
         banner.main()
         print("\033[38;5;105m","[+] Thanks visit again".title())
         exit()
+try:
     def update():
         os.system("clear")
         banner.main()
@@ -80,3 +79,4 @@ except Exception as err:
     banner.main()
     banner.attack(f"{colors.red}ERROR{colors.reset}")
     banner.description(f"{colors.red}{err}{colors.reset}")
+

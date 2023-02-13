@@ -22,8 +22,7 @@ def cheat(cheatSheet,name):
             print(colors.options,f"{i}) {key[i]}".title(),colors.reset)
         option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
         try:
-            threading.Thread(target=run_on_browser.main, args=(cheatSheet[key[int(option)]],)).start()
-                
+            threading.Thread(target=run_on_browser.main, args=(cheatSheet[key[int(option)]],)).start()             
         except:
             return
 
