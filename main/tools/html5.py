@@ -9,7 +9,7 @@ def main():
         os.system("clear")
         banner.main()
         banner.attack("DOS ATTACK - BUG BOUNTY")
-        list_vulns = ["WEB Messaging", "WEB Storage SQL Injection", "CORS Implementation", "Offline Web Applicatipn"]
+        list_vulns = ["WEB Messaging", "WEB Storage SQL Injection", "CORS Implementation", "Offline Web Applicatipn","Go back"]
         for i in range(len(list_vulns)):
             print(colors.options,f"{i}) {list_vulns[i]}".title(),colors.reset)
         vulns =  input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
