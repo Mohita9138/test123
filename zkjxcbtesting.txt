@@ -1,0 +1,7 @@
+http://www.youtube.com	 --> 200
+http://www.facebook.com	 --> 200
+http://www.baidu.com	 --> 403
+http://www.yahoo.com	 --> 200
+http://www.amazon.com	 --> 200
+http://www.wikipedia.org	 --> 200
+http://www.qq.com	 --> 200

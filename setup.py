@@ -7,7 +7,6 @@ def main():
     os.system("clear")
     banner.main()
     banner.attack("Setup")
-    os.system("mkdir Tools")
     os.system("pip install -r requirements.txt")
     os.system("sudo apt install golang -y")
     os.system("go env -w GO111MODULE=on")
@@ -25,6 +24,7 @@ def create_symlink():
     f.close()
     os.system("chmod +x *")
     os.system("sudo mv run.sh /usr/bin/cyberonix")
+    os.system("sudo mv cyberonix.1 /usr/local/man/man1/")
     finish()
 def finish():
     os.system("clear")
