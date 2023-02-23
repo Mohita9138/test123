@@ -26,7 +26,7 @@ def main():
                 "https://www.kali.org/tools/goldeneye/", "p", 0
             )
             template.template(
-                "GoldenEye",
+                "goldeneye",
                 "goldeneye -h",
                 github.strip(),
                 {

@@ -40,7 +40,6 @@ def main():
                     )
                 option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
                 if option == "0":
-                    print("\n[+] OWASP ZAP")
                     os.system("clear")
                     # name,command,discription,writeup,link=True,method="kali",github_install="",github_check=True
                     github = "The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.\nIt is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing as well as being a useful addition to an experienced pen testers toolbox."
@@ -57,7 +56,6 @@ def main():
                         },
                     )
                 elif option == "1":
-                    print("\n[+] BurpSuite")
                     os.system("clear")
                     github = "Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initialmapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities. Burp gives you full control, letting you combine advanced manual techniques with state-of-the-art automation, to make your work faster, more effective, and more fun."
                     template.template(
@@ -73,7 +71,6 @@ def main():
                         },
                     )
                 elif option == "2":
-                    print("\n[+] Nikto")
                     os.system("clear")
                     github = github_getting_text(
                         "https://github.com/sullo/nikto/wiki/Overview-&-Description",
@@ -93,7 +90,6 @@ def main():
                         },
                     )
                 elif option == "3":
-                    print("\n[+] Nmap")
                     os.system("clear")
                     github = "Nmap (Network Mapper) is a network scanner created by Gordon Lyon (also known by his pseudonym Fyodor Vaskovich). Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the responses."
                     template.template(
@@ -107,7 +103,6 @@ def main():
                         },
                     )
                 elif option == "4":
-                    print("\n[+] Arachni")
                     os.system("clear")
                     github = "Arachni is a feature-full, modular, high-performance Ruby framework aimed towards helping penetration testers and administrators evaluate the security of modern web applications. It is versatile enough to cover a great deal of use cases, ranging from a simple command line scanner utility, to a global high performance grid of scanners, to a Ruby library allowing for scripted audits, to a multi-user multi-scan web collaboration platform. In addition, its simple REST API makes integration a cinch."
                     template.template(
@@ -120,7 +115,6 @@ def main():
                         github_check="arachni-1.6.1.3-0.6.1.1",
                     )
                 elif option == "5":
-                    print("\n[+] Wapiti")
                     os.system("clear")
                     github = github_getting_text(
                         "https://github.com/wapiti-scanner/wapiti", 'p[dir="auto"]', 6
@@ -137,7 +131,6 @@ def main():
                         },
                     )
                 elif option == "6":
-                    print("\n[+] Nessus")
                     os.system("clear")
                     github = github_getting_text(
                         "https://www.techtarget.com/searchnetworking/definition/Nessus",
@@ -158,7 +151,6 @@ def main():
                         method="deb",
                     )
                 elif option == "7":
-                    print("\n[+] Nuclei")
                     os.system("clear")
                     github = github_getting_text(
                         "https://github.com/projectdiscovery/nuclei", 'p[dir="auto"]', 3
@@ -175,7 +167,6 @@ def main():
                         },
                     )
                 elif option == "8":
-                    print("\n[+] Fiddler")
                     os.system("clear")
                     github = github_getting_text(
                         "https://learn.microsoft.com/en-us/windows/win32/win7appqual/fiddler-web-debugger-tool/",
@@ -192,9 +183,8 @@ def main():
                         github_check="Fiddler_Everywhere",
                     )
                 elif option == "9":
-                    print("\n[+] Penetration Testers Framework (PTF)")
                     os.system("clear")
-                    github = ""
+                    github = "The PenTesters Framework (PTF) is a Python script designed for Debian/Ubuntu/ArchLinux based distributions to create a similar and familiar distribution for Penetration Testing. PTF attempts to install all of your penetration testing tools (latest and greatest), compile them, build them, and make it so that you can install/update your distribution on any machine. Everything is organized in a fashion that is cohesive to the Penetration Testing Execution Standard (PTES) and eliminates a lot of things that are hardly used"
                     template.template(
                         "Penetration Testers Framework (PTF)",
                         "chmod +x ptf && ./ptf",
@@ -208,7 +198,6 @@ def main():
                     break
 
         elif option == "1":
-            print("\n[+] Write-UPS")
             os.system("clear")
             banner.main()
             Cheat_sheet.cheat(

@@ -40,7 +40,6 @@ def main():
                     )
                 option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
                 if option == "0":
-                    print("\n[+] BurpSuite")
                     os.system("clear")
                     github = "Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initialmapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities. Burp gives you full control, letting you combine advanced manual techniques with state-of-the-art automation, to make your work faster, more effective, and more fun."
                     template.template(
@@ -56,7 +55,6 @@ def main():
                         },
                     )
                 elif option == "1":
-                    print("\n[+] Wireshark")
                     os.system("clear")
                     github = "Wireshark is a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education. It can be used to examine data from a live network or from a previously saved capture file. Wireshark provides a graphical user interface (GUI) for capturing and analyzing network traffic."
                     template.template(
@@ -70,7 +68,6 @@ def main():
                         },
                     )
                 elif option == "2":
-                    print("\n[+] OWASP ZAP")
                     os.system("clear")
                     github = "The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.\nIt is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing as well as being a useful addition to an experienced pen testers toolbox."
                     template.template(
@@ -86,7 +83,6 @@ def main():
                         },
                     )
                 elif option == "3":
-                    print("\n[+] Nessus")
                     os.system("clear")
                     github = github_getting_text(
                         "https://www.techtarget.com/searchnetworking/definition/Nessus",
@@ -107,7 +103,6 @@ def main():
                         method="deb",
                     )
                 elif option == "4":
-                    print("\n[+] Hydra")
                     os.system("clear")
                     github_p1 = github_getting_text(
                         "https://www.kali.org/tools/hydra/", "p", 2
@@ -129,7 +124,6 @@ def main():
                         },
                     )
                 elif option == "5":
-                    print("\n[+] BeEF")
                     os.system("clear")
                     github_p1 = github_getting_text(
                         "https://github.com/beefproject/beef", 'p[dir="auto"]', 2
@@ -150,7 +144,6 @@ def main():
                         },
                     )
                 elif option == "6":
-                    print("\n[+] Sqlmap")
                     os.system("clear")
                     github = github_getting_text("https://sqlmap.org/", "p", 0)
                     template.template(
@@ -165,7 +158,6 @@ def main():
                         },
                     )
                 elif option == "7":
-                    print("\n[+] Metasploit")
                     os.system("clear")
                     github = "The Metasploit Framework is an open-source tool for developing and executing exploit code against a remote target machine. It can be used to test the security of a computer system by finding and exploiting vulnerabilities. The framework includes a large collection of exploit modules, as well as various tools for payload generation, post-exploitation, and more. It can be used by security professionals for penetration testing, as well as by attackers for malicious purposes."
                     template.template(
@@ -195,7 +187,6 @@ def main():
                         },
                     )
                 elif option == "8":
-                    print("\n[+] Nmap")
                     os.system("clear")
                     github = "Nmap (Network Mapper) is a network scanner created by Gordon Lyon (also known by his pseudonym Fyodor Vaskovich). Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the responses."
                     template.template(
@@ -209,9 +200,8 @@ def main():
                         },
                     )
                 elif option == "9":
-                    print("\n[+] Penetration Testers Framework (PTF)")
                     os.system("clear")
-                    github = ""
+                    github = "The PenTesters Framework (PTF) is a Python script designed for Debian/Ubuntu/ArchLinux based distributions to create a similar and familiar distribution for Penetration Testing. PTF attempts to install all of your penetration testing tools (latest and greatest), compile them, build them, and make it so that you can install/update your distribution on any machine. Everything is organized in a fashion that is cohesive to the Penetration Testing Execution Standard (PTES) and eliminates a lot of things that are hardly used"
                     template.template(
                         "Penetration Testers Framework (PTF)",
                         "chmod +x ptf && ./ptf",
@@ -225,7 +215,6 @@ def main():
                     break
 
         elif option == "1":
-            print("\n[+] Write-UPS")
             os.system("clear")
             banner.main()
             Cheat_sheet.cheat(
