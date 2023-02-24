@@ -165,7 +165,7 @@ try:
                     arguments.asnrecord(path=args.file)
             elif args.ip:
                 if args.output:
-                    arguments.asnrecord(path=args.ip, output=args.output)
+                    arguments.asnrecord(url=args.ip, output=args.output)
                 else:
                     arguments.asnrecord(url=args.ip)
 
