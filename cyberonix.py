@@ -91,8 +91,8 @@ try:
             action="store_true",
             help="To Get Screenshot Of Websites(options: --file,--domain)",
         )
-        parser.add_argument("--output", "-o", help="To Get Output In A File(-o path/to/location)")
-        parser.add_argument("--file", "-f", help="To Give A File Input(-f path/to/file.txt)")
+        parser.add_argument("--output", "-o", help="Specify An Input File (-f path/to/file.txt)")
+        parser.add_argument("--file", "-f", help="Specify An Output File (-o path/to/location)")
         
         asn_Args = parser.add_argument_group('ASN Record')
         parser.add_argument("--ip", "-ip", help="Specify IP Address")
