@@ -277,6 +277,9 @@ def remove_dublicates(location,output=''):
         
 
 def screenshot(path="", url=""):
+    if "https://" not in url:
+        url="https://"+url
+
     banner.main()
     banner.attack("Screenshotting")
     if path != "":
@@ -285,6 +288,8 @@ def screenshot(path="", url=""):
             urls = f.read()
             urls = urls.split("\n")
             for url in urls:
+                if "https://" not in url:
+                    url="https://"+url
                 if url != "":
                     driver_path = "main/tools/.driver/geckodriver"
                     firefox_options = webdriver.FirefoxOptions()
