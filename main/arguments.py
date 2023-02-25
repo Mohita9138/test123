@@ -131,6 +131,8 @@ def outputfunc(addr, line):
 
 
 def http_status_code(path="", url="", output=""):
+    if "https://" not in url:
+        url="https://"+url
     banner.main()
     banner.attack("HTTP Status Code")
     if path != "":
@@ -140,6 +142,9 @@ def http_status_code(path="", url="", output=""):
             urls = urls.split("\n")
             for url in urls:
                 if url != "":
+                    if "https://" not in url:
+                        url="https://"+url
+
                     try:
                         headers = {
                             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
@@ -288,9 +293,9 @@ def screenshot(path="", url=""):
             urls = f.read()
             urls = urls.split("\n")
             for url in urls:
-                if "https://" not in url:
-                    url="https://"+url
                 if url != "":
+                    if "https://" not in url:
+                        url="https://"+url
                     driver_path = "main/tools/.driver/geckodriver"
                     firefox_options = webdriver.FirefoxOptions()
                     firefox_options.headless = True
