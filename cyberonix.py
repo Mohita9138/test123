@@ -2,7 +2,7 @@
 import os
 import subprocess
 from main import *
-from main.tools import colors,banner
+from main.tools import colors, banner
 import time, argparse
 
 
@@ -50,78 +50,104 @@ try:
 
     def starting():
         parser = argparse.ArgumentParser(
-            description="Cyberonix is a complete resource hub for Cyber Security Community. Our aim is to make this tool an 1 stop solution for all the Hackers out there to get resources of various topics in Cyber Security. We will keep updating this tool & adding new & updated resources on the go."
+            description="Cyberonix is a complete resource hub for Cyber Security Community. Our aim is to make this tool an 1 stop solution for all the Hackers out there to get resources of various topics in Cyber Security. We will keep updating this tool & adding new & updated resources on the go.",
         )
-        parser.add_argument(
+        main_args = parser.add_argument_group('Main Arguments')
+            
+        main_args.add_argument(
             "--tools", "-t", action="store_true", help="Run Tools Function"
         )
-        parser.add_argument(
+        main_args.add_argument(
             "--cheatsheet", "-c", action="store_true", help="Run Cheatsheet Function"
         )
-        parser.add_argument(
-            "--news","-n",
+        main_args.add_argument(
+            "--news",
+            "-n",
             nargs="?",
             metavar="Date",
             const="",
             type=str,
             help="Date In The Format yyyy-mm-dd",
         )
-        parser.add_argument("--getip","-gip", help="Get Ip Of A Domain", metavar="Domain")
-        parser.add_argument("--domain", "-D", help="To Give Domain")
-        parser.add_argument("--ip","-ip", help="To Give IP")
-        parser.add_argument(
-            "--asnrecord", "-asn", action="store_true", help="To Get ASN Record"
+        ip_args = parser.add_argument_group('IP')
+        ip_args.add_argument(
+            "--getip", "-gip", help="Get Ip Of A Domain", metavar="Domain"
         )
-        parser.add_argument(
+        ip_args.add_argument("--ipinfo", "-ipi", metavar="IP", help="Get IP Infomation")
+                      
+        dns_Args = parser.add_argument_group('DNS Records')
+        parser.add_argument("--domain", "-D", dest='domain',
+                    help='Specify the domain', option_strings=['--domain'])
+        dns_Args.add_argument(
+            "--dnsrecord", "-dns", action="store_true", help="To Get DNS Records(options: --domain) and use --record to specify record name"
+        )
+        dns_Args.add_argument(
             "--record", "-r", help="To Give Record For DNSrecord(Like: A,TXT,MX)"
         )
-        parser.add_argument(
-            "--dnsrecord", "-dns", action="store_true", help="To Get DNS Records"
+        screenshot_Args = parser.add_argument_group('Screenshoting')
+        screenshot_Args.add_argument(
+            "--screenshot",
+            "-s",
+            action="store_true",
+            help="To Get Screenshot Of Websites(options: --file,--domain)",
         )
-        parser.add_argument("--ipinfo","-ipi", metavar="IP", help="Get IP Infomation")
-        parser.add_argument("--upper", "-u", action="store_true", help="For Uppercase")
-        parser.add_argument("--lower", "-l", action="store_true", help="For Lowercase")
-        parser.add_argument("--digits", "-d", action="store_true", help="For Digits")
-        parser.add_argument(
-            "--punctuation", "-p", action="store_true", help="For Punctuation"
+        parser.add_argument("--output", "-o", help="To Get Output In A File")
+        parser.add_argument("--file", "-f", help="To Give A File Input")
+        
+        asn_Args = parser.add_argument_group('ASN Record')
+        parser.add_argument("--ip", "-ip", help="Specify IP Address")
+        asn_Args.add_argument(
+                "--asnrecord", "-asn", action="store_true", help="To Get ASN Record(Options: --ip,--file,--output)"
         )
-        parser.add_argument(
-            "--length", "-L", help="To Specify Length Of Password (Default=8)"
+        password_Args = parser.add_argument_group("Password Generation")
+        password_Args.add_argument(
+            "--passwordgen", "-P", action="store_true", help="To Generate Password"
         )
-        parser.add_argument(
+        password_Args.add_argument(
             "--default-password-gen",
             "-pass",
             action="store_true",
-            help="To Generate Random Password (Recommended)",
+            help="To Generate Random Password (Recommended)(You can only use --length,--checkpassword)",
         )
-        parser.add_argument(
+
+        password_Args.add_argument(
+            "--upper", "-u", action="store_true", help="For Uppercase"
+        )
+        password_Args.add_argument(
+            "--lower", "-l", action="store_true", help="For Lowercase"
+        )
+        password_Args.add_argument(
+            "--digits", "-d", action="store_true", help="For Digits"
+        )
+        password_Args.add_argument(
+            "--punctuation", "-p", action="store_true", help="For Punctuation"
+        )
+        password_Args.add_argument(
+            "--length", "-L", help="To Specify Length Of Password (Default=8)"
+        )
+        password_Args.add_argument(
             "--checkpassword",
             "-C",
             action="store_true",
             help="To Check Your Generated Password",
         )
-        parser.add_argument(
-            "--passwordgen", "-P", action="store_true", help="To Generate Password"
-        )
-        parser.add_argument("--file", "-f", help="To Give A File Input")
-        parser.add_argument("--output", "-o", help="To Get Output In A File")
-        parser.add_argument(
+        
+        hstatus_Args = parser.add_argument_group('HTTP Status')
+        hstatus_Args.add_argument(
             "--http-status",
             "-S",
             action="store_true",
-            help="To Get Http Status Code Of A Domain",
+            help="To Get Http Status Code Of A Domain(Options: --domain,--file,--output)",
         )
-        parser.add_argument(
-            "--screenshot",
-            "-s",
+        remove_dub_Args = parser.add_argument_group('remove duplicate')
+        remove_dub_Args.add_argument(
+            "--remove-duplicate",
+            "-rd",
             action="store_true",
-            help="To Get Screenshot Of Websites",
+            help="To Remove Dublicates From a File(Options: --file,--output)",
         )
-        parser.add_argument(
-            "--remove-duplicate", "-rd", action="store_true", help="Run Cheatsheet Function"
-        )
-
         args = parser.parse_args()
+
         if args.tools:
             tool.main()
         elif args.getip:
@@ -148,7 +174,7 @@ try:
         elif args.remove_duplicate:
             if args.file:
                 if args.output:
-                    arguments.remove_dublicates(location=args.file,output=args.output)
+                    arguments.remove_dublicates(location=args.file, output=args.output)
                 else:
                     arguments.remove_dublicates(location=args.file)
 
@@ -265,8 +291,8 @@ try:
         starting()
 except KeyboardInterrupt:
     exit_program()
-except Exception as err:
-    os.system("clear")
-    banner.main()
-    banner.attack(f"{colors.red}ERROR{colors.reset}")
-    banner.description(f"{colors.red}{err}{colors.reset}")
+# except Exception as err:
+#     os.system("clear")
+#     banner.main()
+#     banner.attack(f"{colors.red}ERROR{colors.reset}")
+#     banner.description(f"{colors.red}{err}{colors.reset}")
