@@ -33,7 +33,7 @@ def main():
                     "Goldeneye DDos Tool in Kali Linux": "https://www.geeksforgeeks.org/goldeneye-ddos-tool-in-kali-linux/",
                     "Golden Eye DDoS Tool: Installation and Tool usage with examples": "https://allabouttesting.org/golden-eye-ddos-tool-installation-and-tool-usage-with-examples/",
                     "DoS website in Kali Linux using GoldenEye": "https://www.blackmoreops.com/2015/05/18/dos-website-in-kali-linux-using-goldeneye/",
-                    "DoS website with GoldenEye – Layer 7 DoS tool": "https://www.darkmoreops.com/2014/11/22/dos-website-with-goldeneye/",
+                    "DoS website with GoldenEye - Layer 7 DoS tool": "https://www.darkmoreops.com/2014/11/22/dos-website-with-goldeneye/",
                 },
             )  # method=kali
         elif option == "1":
@@ -42,7 +42,7 @@ def main():
                 "https://www.kali.org/tools/slowhttptest/", "p", 1
             )
             template.template(
-                "SlowHTTPTest",
+                "slowhttptest",
                 "slowhttptest -h",
                 github.strip(),
                 {
@@ -65,7 +65,7 @@ def main():
                 "https://www.kali.org/tools/thc-ssl-dos/", "p", 3
             )
             template.template(
-                "THC-SSL-DOS",
+                "thc-ssl-dos",
                 "thc-ssl-dos -h",
                 github.strip(),
                 {
@@ -76,11 +76,11 @@ def main():
                 },
             )  # method is kali
         elif option == "3":
-            print("\n[+] Slowris")
+            print("\n[+] SlowLoris")
             github = "Slowloris is a Low bandwidth  HTTP Denial of Service attack that affects threaded servers"
             template.template(
                 "Slowloris",
-                "slowloris -h",
+                "python slowloris -h",
                 github.strip(),
                 {
                     "Slowloris DDOS Attack Tool in Kali Linux": "https://www.geeksforgeeks.org/slowloris-ddos-attack-tool-in-kali-linux/",
@@ -89,6 +89,8 @@ def main():
                 },
                 link="https://github.com/gkbrk/slowloris.git",
                 method="github",
+                github_install="git clone https://github.com/gkbrk/slowloris.git",
+                github_check="slowloris",
             )
 
         else:

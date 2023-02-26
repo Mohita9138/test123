@@ -291,8 +291,8 @@ try:
         starting()
 except KeyboardInterrupt:
     exit_program()
-# except Exception as err:
-#     os.system("clear")
-#     banner.main()
-#     banner.attack(f"{colors.red}ERROR{colors.reset}")
-#     banner.description(f"{colors.red}{err}{colors.reset}")
+except Exception as err:
+    os.system("clear")
+    banner.main()
+    banner.attack(f"{colors.red}ERROR{colors.reset}")
+    banner.description(f"{colors.red}{err}{colors.reset}")

@@ -100,6 +100,8 @@ def asnrecord(path="", url="", output=""):
                         print(
                             f"{colors.red}[+] {url}\t --> {colors.red}Something Went Wrong{colors.reset}"
                         )
+        except KeyboardInterrupt:
+            exit_program()
         except Exception as err:
             print(
                 f"{colors.red}[-] Something Went Wrong\n[!] {err}\n[!] Check Your File location"
@@ -188,6 +190,9 @@ def http_status_code(path="", url="", output=""):
                             f"{colors.red}[+] {url}\t --> {colors.red}{err}{colors.reset}"
                         )
                 time.sleep(0.5)
+        except KeyboardInterrupt:
+            exit_program()
+
         except Exception as err:
             print(f"{colors.red}[-] Something Went Wrong\n[!] {err}")
     else:
@@ -220,6 +225,8 @@ def http_status_code(path="", url="", output=""):
                 print(
                     f"{colors.blue}[+] {url}\t --> {colors.green}{status}{colors.reset}"
                 )
+        except KeyboardInterrupt:
+            exit_program()
         except:
             print(
                 f"{colors.red}[+] {url}\t --> {colors.red}Something Went Wrong{colors.reset}"
@@ -244,12 +251,20 @@ def password_gen(
         main_password += string_digits
     if punctuation:
         main_password += string_punctuation
-    result_str = "".join(random.choice(main_password) for i in range(int(length)))
-    print(
-        f"{colors.blue}[+] Your Passwrod Is: {colors.green}{result_str}{colors.reset}"
-    )
-    if check:
-        checking(result_str)
+    try:
+        result_str = "".join(random.choice(main_password) for i in range(int(length)))
+        print(
+            f"{colors.blue}[+] Your Passwrod Is: {colors.green}{result_str}{colors.reset}"
+        )
+        if check:
+            checking(result_str)
+    except KeyboardInterrupt:
+            exit_program()
+    except IndexError:
+        print(
+            f"{colors.red}[-] Please Specify atleast one argument (--upper,--lower,--digits,--punctuation) {colors.reset}"
+        )
+
 def remove_dublicates(location,output=''):
     f=open(location,'r')
     lines=f.read()
