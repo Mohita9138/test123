@@ -30,7 +30,11 @@ def finish():
     os.system("clear")
     banner.main()
     banner.attack("Setup Completed")
-    os.system("cyberonix")
+    try:
+        subprocess.run('cyberonix',shell=True, check = True)
+    except Exception as err:
+        os.system("python3 cyberonix.py")
+    exit()
 
 if __name__ == "__main__":
     main()

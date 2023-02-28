@@ -80,7 +80,7 @@ def main():
             github = "Slowloris is a Low bandwidth  HTTP Denial of Service attack that affects threaded servers"
             template.template(
                 "Slowloris",
-                "python slowloris -h",
+                "python slowloris.py -h",
                 github.strip(),
                 {
                     "Slowloris DDOS Attack Tool in Kali Linux": "https://www.geeksforgeeks.org/slowloris-ddos-attack-tool-in-kali-linux/",
