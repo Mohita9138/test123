@@ -9,13 +9,12 @@ def main():
     while True:
         os.system("clear")
         banner.main()
-        banner.attack("DOS ATTACK - BUG BOUNTY")
+        banner.attack("HTML5 - BUG BOUNTY")
         list_vulns = [
             "WEB Messaging",
             "WEB Storage SQL Injection",
             "CORS Implementation",
-            "Offline Web Applicatipn",
-            "Go back",
+            "Go back"
         ]
         for i in range(len(list_vulns)):
             print(colors.options, f"{i}) {list_vulns[i]}".title(), colors.reset)
